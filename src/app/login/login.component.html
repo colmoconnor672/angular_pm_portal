@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                
+                <div class="form-group" *ngIf="!isLoginMode">
+                    <label for="orgName">Organisation Name</label>
+                    <input  id="orgName" 
+                        type="text" 
+                        formControlName="orgName"
+                        class="form-control">
+                    <span 
+                        *ngIf="!loginForm.get('orgName').valid && loginForm.get('orgName').touched" 
+                        class="help-block">Please enter a valid Organisation Name!</span>
+                </div>
+                <div class="form-group" *ngIf="!isLoginMode">
+                    <label for="orgEmail">Organisation Email</label>
+                    <input  id="orgEmail" 
+                        type="text" 
+                        formControlName="orgEmail"
+                        class="form-control">
+                    <span 
+                        *ngIf="!loginForm.get('orgEmail').valid && loginForm.get('orgEmail').touched" 
+                        class="help-block">Please enter a valid Organisation Email address!</span>
+                </div>
+                <div class="form-group" *ngIf="!isLoginMode">
+                    <label for="orgPhone">Organisation Phone</label>
+                    <input  id="orgPhone" 
+                        type="text" 
+                        formControlName="orgPhone"
+                        class="form-control">
+                    <span 
+                        *ngIf="!loginForm.get('orgPhone').valid && loginForm.get('orgPhone').touched" 
+                        class="help-block">Please enter a valid Organisation Phone!</span>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="email">User Email</label>
+                    <input  id="email" 
+                        type="email" 
+                        formControlName="email"
+                        class="form-control">
+                    <span 
+                        *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" 
+                        class="help-block">Please enter a valid email address!</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">User Password</label>
+                    <input id="password" 
+                        type="password" 
+                        formControlName="password"
+                        class="form-control">
+                    <span 
+                        *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" 
+                        class="help-block">Please enter a valid password (min 6 characters)!</span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="submit" [disabled]="!isLoginMode ? !loginForm.valid : !loginForm.get('email').valid || !loginForm.get('password').valid">
+                        {{ isLoginMode ? 'Login' : 'Sign Up'}}</button> | 
+                    <button class="btn btn-primary" type="button" (click)="onSwitchMode()">
+                        Switch to {{ isLoginMode ? 'Sign Up' : 'Login'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
