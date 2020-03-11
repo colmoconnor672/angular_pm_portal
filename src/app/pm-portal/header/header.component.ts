@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       selectedOrganisation => {
         console.log('Header: In organisationSelected.subscribe(..) method');
         this.organisationId = selectedOrganisation;
-        this.projectsUrl = '/org/' + selectedOrganisation + '/projects/';
+        //this.projectsUrl = '/projects';
         this.reloadProjectData();
         console.log('Header: Exiting organisationSelected.subscribe(..) method. OrgId = ' + selectedOrganisation);
       }
