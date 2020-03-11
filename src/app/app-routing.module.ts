@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'chats', component: PmPortalComponent },
   { path: 'mentions', component: PmPortalComponent },
   { path: 'analysis', component: PmPortalComponent },
-  { path: 'test', component: PmPortalComponent },
 
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'not-found', component: PageNotFoundComponent },
