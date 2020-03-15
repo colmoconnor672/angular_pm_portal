@@ -1,1 +1,26 @@
-<p>task-item-detail works!</p>
+<div *ngIf="!currentTask">
+    <div class="row" >
+        <div class="col-md-12">
+            <p>Please select a Task to view the content</p>
+        </div>
+    </div>
+</div>
+<div  *ngIf="currentTask">
+    <div class="row" >
+        <div class="col-md-12">
+            <h5>{{currentTask.title}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>{{currentTask.description}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>{{currentTask.status.description}}</p>
+        </div>
+    </div>
+</div>

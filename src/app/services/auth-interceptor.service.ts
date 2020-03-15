@@ -21,12 +21,14 @@ export class AuthInterceptorService implements HttpInterceptor {
                 const modifiedReq = req.clone({
                   headers: securityHeaders
                 })
+                console.log('In AuthInterceptorService: NO USER - added security header only!');
                 return next.handle(modifiedReq);
               }
               const modifiedReq = req.clone({
                   headers: securityHeaders,
                   params: new HttpParams().set('auth', user.token)
               })
+              console.log('In AuthInterceptorService: HAS USER - added both security and Auth headers!');
               return next.handle(modifiedReq);
           })
       );

@@ -25,6 +25,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TasksListItemComponent } from './pm-portal/tasks/tasks-list/tasks-list-item/tasks-list-item.component';
+import { WebsocketService } from './services/websocket.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TaskItemEditComponent,
     TaskItemAddComponent,
     TaskEventsListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TasksListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     OrganisationService, 
     TasksService, 
     ProjectsService,
+    WebsocketService,
     {provide: 
       HTTP_INTERCEPTORS, 
       useClass: AuthInterceptorService, 

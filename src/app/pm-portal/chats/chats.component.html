@@ -1,1 +1,40 @@
-<p>chats works!</p>
+<!--The content below is only a placeholder and can be replaced.-->
+
+<noscript><h2 style="color: #ff0000">
+    Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable Javascript and reload this page!</h2>
+</noscript>
+
+<div id="main-content" class="container">
+  
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button (click)="connect()" class="btn btn-default" type="submit" [disabled]="isConnected">Connect</button>
+                    <button (click)="disconnect()" class="btn btn-default" type="submit" [disabled]="!isConnected">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">Message</label>
+                    <input type="text" [(ngModel)]="name" class="form-control" name="name"> <br>
+                </div>
+                <button (click)="sendMessage()" class="btn btn-warning" type="submit" [disabled]="!isConnected">Send</button>
+            </form>
+        </div>
+        <ul>
+            <li *ngFor="let message of messages">{{message}}</li>
+        </ul>
+    </div>
+   
+</div>
+
+
+  <!-- <router-outlet></router-outlet> -->
+
+  <!-- <p>Chats works!!</p> -->

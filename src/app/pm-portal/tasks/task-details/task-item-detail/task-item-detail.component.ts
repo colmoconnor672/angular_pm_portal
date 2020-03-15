@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { Task } from 'src/app/models/task';
+import { TasksService } from 'src/app/services/tasks.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-task-item-detail',
@@ -6,10 +10,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-item-detail.component.css']
 })
 export class TaskItemDetailComponent implements OnInit {
+  private taskid: number;
+  currentTask: Observable<Task>;
+  private sub1: Subscription;
 
-  constructor() { }
+  constructor(
+    private tasksService: TasksService, 
+    private router: Router, 
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sub1 = this.tasksService.taskSelected.subscribe(
+      (selectedTaskId: number) => {
+        console.log('selectedTaskId value = ' + selectedTaskId);
+        this.loadData(selectedTaskId);
+      }
+    );
+
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.taskid = params['id'];
+        this.loadData(this.taskid);
+      }
+    )
+
+  }
+
+  loadData(taskId: number) {
+    this.tasksService.getTask(taskId).subscribe(
+      task => {
+        console.log('task = ' + task);
+        this.currentTask = task;
+      }
+    );
+  }
+
+  ngOnDestroy(){
+    this.sub1.unsubscribe();
   }
 
 }

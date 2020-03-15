@@ -9,9 +9,9 @@ export class TasksService {
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/tasks';
 
   taskSelected = new Subject<number>();
+  tasksUpdated = new Subject<number>();
 
   constructor(private http: HttpClient) { }
-
 
   getTaskList(): Observable<any> {
     console.log('........... Entered getTaskList() method .................');
@@ -22,10 +22,8 @@ export class TasksService {
   
   getTaskListForProject(projectId: number): Observable<any> {
     console.log('........... Entered getTaskListForProject('+projectId+') method .................');
-
     let result: Observable<any> = undefined;
     if (projectId) {
-      //let url = 'http://localhost:8081/pm_portal/api/v1/tasksForProject';
       let url = this.baseUrl + 'ForProject'
       result = this.http.get(`${url}/${projectId}`);
     } else {
@@ -43,16 +41,25 @@ export class TasksService {
     return task;
   }
 
-  createTask(task: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, task);
+  createTask(task: Task): Observable<Object> {
+    let result: Observable<Object> = null;
+    result = this.http.post(`${this.baseUrl}`, task);
+    this.tasksUpdated.next(task.id)
+    return result;
   }
 
   updateTask(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    let result: Observable<Object> = null;
+    result = this.http.put(`${this.baseUrl}/${id}`, value);
+    this.tasksUpdated.next(id)
+    return result;
   }
 
   deleteTask(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    let result: Observable<any> = null;
+    result = this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    this.tasksUpdated.next(id)
+    return result;
   }
 
 }

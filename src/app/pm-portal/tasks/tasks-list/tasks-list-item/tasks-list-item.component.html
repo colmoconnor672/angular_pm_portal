@@ -1,0 +1,14 @@
+
+<a style="cursor: pointer" 
+    class="list-group-item clearfix" 
+    routerLinkActive="active"
+    [routerLink]="['detail', taskItem.id]">
+
+    <span class="float-right">
+        <p class="list-group-item-text">{{taskItem.status.description}}</p>
+    </span>
+    
+    <div class="float-left">
+        <h6 class="list-group-item-heading">{{taskItem.title}}</h6>
+    </div>
+</a>
