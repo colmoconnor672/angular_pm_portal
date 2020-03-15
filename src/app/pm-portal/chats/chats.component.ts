@@ -10,7 +10,7 @@ export class ChatsComponent implements OnInit {
 
   title = 'angular8-springboot-websocket';
   greeting: any;
-  name: string;
+  message: string;
   messages: string[] = [];
   isConnected: boolean = false;
 
@@ -35,8 +35,8 @@ export class ChatsComponent implements OnInit {
   }
 
   sendMessage(){
-    this.webSocketService._send(this.name);
-    this.name = '';
+    this.webSocketService._send(this.message);
+    this.message = '';
   }
 
 }

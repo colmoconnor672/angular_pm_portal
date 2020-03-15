@@ -55,7 +55,7 @@ export class WebsocketService {
 */
   _send(message) {
       console.log("calling logout api via web socket");
-      this.stompClient.send("/app/hello", {}, JSON.stringify(this.getCurrentUserEmail() + message));
+      this.stompClient.send("/app/uploadMessage", {}, JSON.stringify(this.getCurrentUserEmail() + message));
   }
 
   onMessageReceived(message) {
