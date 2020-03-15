@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 export class WebsocketService {
 
   webSocketEndPoint: string = 'http://localhost:8081/pm_portal/ws';
-  topic: string = "/topic/greetings";
+  topic: string = "/topic/messageBoard";
   stompClient: any;
   chatUpdated = new Subject<string>();
   
