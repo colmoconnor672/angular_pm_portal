@@ -8,8 +8,17 @@ export class ProjectsService {
 
   projectSelected = new Subject<number>();
 
+  private currentProjectId: number = null;
+
   constructor(private http: HttpClient) { }
 
+  getCurrentProjectId(){
+    return this.currentProjectId;
+  }
+
+  setCurrentProjectId(projectId: number) {
+    this.currentProjectId = projectId
+  }
 
   getProjectList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);

@@ -45,6 +45,15 @@ export class TaskItemDetailComponent implements OnInit {
     );
   }
 
+  onEditTask(){
+    const id: number = + this.route.snapshot.params['id'];
+    this.router.navigate(['../../edit', id], {relativeTo: this.route} );
+  }
+
+  onAddTask(){
+    this.router.navigate(['../../add'], {relativeTo: this.route} );
+  }
+
   ngOnDestroy(){
     this.sub1.unsubscribe();
   }

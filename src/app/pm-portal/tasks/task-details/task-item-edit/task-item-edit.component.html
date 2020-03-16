@@ -1,1 +1,63 @@
-<p>task-item-edit works!</p>
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="title">Title</label>
+
+          <!-- <input
+            type="text"
+            id="title"
+            formControlName="title"
+            class="form-control"> -->
+
+           <textarea
+                id="title"
+                formControlName="title"
+                class="form-control">
+            </textarea>
+
+
+          <span 
+            *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched" 
+            class="help-block">Please enter a valid title!</span>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+
+          <!-- 
+            <input
+            type="text"
+            id="description"
+            [formControlName]="['description']"
+            class="form-control"> -->
+
+           <textarea
+            id="description"
+            [formControlName]="['description']"
+            class="form-control">
+          </textarea>
+
+            <span 
+              *ngIf="!taskForm.get('description').valid && taskForm.get('description').touched" 
+              class="help-block">Please enter a valid description!</span>
+        </div>
+
+        <div class="form-group">
+            <label for="status">status</label>
+            <input
+              type="text"
+              id="status"
+              [formControlName]="['status']"
+              class="form-control">
+              <span 
+                *ngIf="!taskForm.get('status').valid && taskForm.get('status').touched" 
+                class="help-block">Please enter a valid status!</span>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+      </form>
+    </div>
+  </div>

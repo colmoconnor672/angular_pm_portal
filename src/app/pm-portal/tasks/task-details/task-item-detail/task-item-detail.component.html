@@ -8,6 +8,13 @@
 <div  *ngIf="currentTask">
     <div class="row" >
         <div class="col-md-12">
+            <button class="btn btn-primary" (click)="onEditTask()">Edit</button>
+            <button class="btn btn-primary" (click)="onAddTask()">Add Task</button>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-md-12">
             <h5>{{currentTask.title}}</h5>
         </div>
     </div>
