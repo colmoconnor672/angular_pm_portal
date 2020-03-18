@@ -19,6 +19,16 @@ export class TasksService {
     return result;
   }
 
+	getPromise(): Promise<Task[]> {
+		return this.http.get<Task[]>(this.baseUrl)
+      .toPromise()
+			.catch(this.handleError);
+	}
+
+  handleError(error: any): Promise<any>{
+    console.log(error);
+    return Promise.reject(error);
+  }
   
   getTaskListForProject(projectId: number): Observable<any> {
     console.log('........... Entered getTaskListForProject('+projectId+') method .................');

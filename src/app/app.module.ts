@@ -27,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TasksListItemComponent } from './pm-portal/tasks/tasks-list/tasks-list-item/tasks-list-item.component';
 import { WebsocketService } from './services/websocket.service';
+import { GanttComponent } from './pm-portal/analysis/gantt/gantt.component';
+import { TaskDependenciesService } from './services/task-dependencies.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { WebsocketService } from './services/websocket.service';
     TaskItemAddComponent,
     TaskEventsListComponent,
     PageNotFoundComponent,
-    TasksListItemComponent
+    TasksListItemComponent,
+    GanttComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { WebsocketService } from './services/websocket.service';
   providers: [
     OrganisationService, 
     TasksService, 
+    TaskDependenciesService,
     ProjectsService,
     WebsocketService,
     {provide: 

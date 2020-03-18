@@ -3,7 +3,7 @@
       
       <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="text">Title</label>
 
           <!-- <input
             type="text"
@@ -12,15 +12,15 @@
             class="form-control"> -->
 
            <textarea
-                id="title"
-                formControlName="title"
+                id="text"
+                formControlName="text"
                 class="form-control">
             </textarea>
 
 
           <span 
-            *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched" 
-            class="help-block">Please enter a valid title!</span>
+            *ngIf="!taskForm.get('text').valid && taskForm.get('text').touched" 
+            class="help-block">Please enter a valid title text!</span>
         </div>
 
         <div class="form-group">

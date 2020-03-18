@@ -26,7 +26,7 @@ export class TaskItemEditComponent implements OnInit {
     // initialise the reactive form here
     this.taskForm = new FormGroup({
       'id': new FormControl(null),
-      'title': new FormControl(null, Validators.required),
+      'text': new FormControl(null, Validators.required),
       'description': new FormControl(null, Validators.required),
       'projectId': new FormControl(null),
       'status': new FormControl(null, Validators.required),
@@ -58,7 +58,7 @@ export class TaskItemEditComponent implements OnInit {
         this.taskForm.setValue(
           {
             id: task.id,
-            title: task.title,
+            text: task.text,
             description: task.description,
             projectId: task.projectId,
             status: task.status.description,
