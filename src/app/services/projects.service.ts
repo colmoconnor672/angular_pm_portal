@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class ProjectsService {
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/projects';
 
-  projectSelected = new Subject<number>();
+  projectSelected = new BehaviorSubject<number>(null);
 
-  private currentProjectId: number = null;
+  //private currentProjectId: number = null;
 
   constructor(private http: HttpClient) { }
 
-  getCurrentProjectId(){
-    return this.currentProjectId;
-  }
+  // getCurrentProjectId(){
+  //   return this.currentProjectId;
+  // }
 
-  setCurrentProjectId(projectId: number) {
-    this.currentProjectId = projectId
-  }
+  // setCurrentProjectId(projectId: number) {
+  //   this.currentProjectId = projectId
+  // }
 
   getProjectList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);

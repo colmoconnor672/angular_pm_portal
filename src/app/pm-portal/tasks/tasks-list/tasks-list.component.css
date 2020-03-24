@@ -1,3 +1,9 @@
-/* a {
-    margin-bottom: 0;
-} */
+div.scroll { 
+    margin:4px, 4px; 
+    padding:4px; 
+    width: 95vw; 
+    height: 80vh; 
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    text-align:justify; 
+} 

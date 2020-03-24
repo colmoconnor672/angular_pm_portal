@@ -30,9 +30,6 @@ export class TasksListComponent implements OnInit {
 
   ngOnInit() {
     console.log('TLC - In ngOnInit() method - b4 projectsService.projectSelected.subscribe ..');
-    this.projectId = this.projectsService.getCurrentProjectId();
-    this.reloadData();
-    
     this.sub1 = this.projectsService.projectSelected.subscribe(
       selectedProject => {
         console.log('TLC - In projectsService.projectSelected.subscribe');
@@ -40,8 +37,6 @@ export class TasksListComponent implements OnInit {
         this.reloadData();
       }
     );
-    
-    //this.reloadData();
   }
 
   reloadData() {

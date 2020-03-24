@@ -84,5 +84,11 @@ export class LoginComponent implements OnInit {
   onLogout(){
     this.authService.logout();
   }
+
+  // Added this method to enable the alert-box to be closed. 
+  // See AlertComponent for details
+  onHandleError(){
+    this.errorMessage = null;
+  }
   
 }

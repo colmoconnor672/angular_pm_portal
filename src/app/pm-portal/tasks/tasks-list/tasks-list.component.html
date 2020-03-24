@@ -1,17 +1,8 @@
-<!-- <div class="row">
-    <span>
-        <a routerLink="/projects/tasks/add" class="nav-link" routerLinkActive="active">Add Task</a>
-    </span>
-</div> -->
-
-<!-- <span class="float-right"><a routerLink="/projects/tasks/add" class="nav-link" routerLinkActive="active">Add Task</a></span> -->
-
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 scroll">
         <app-tasks-list-item 
             *ngFor="let currentTask of tasks | async" 
-            [taskItem]="currentTask"
-            >
+            [taskItem]="currentTask">
         </app-tasks-list-item>
     </div>
 </div>

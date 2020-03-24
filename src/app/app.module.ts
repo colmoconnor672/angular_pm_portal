@@ -29,6 +29,7 @@ import { TasksListItemComponent } from './pm-portal/tasks/tasks-list/tasks-list-
 import { WebsocketService } from './services/websocket.service';
 import { GanttComponent } from './pm-portal/analysis/gantt/gantt.component';
 import { TaskDependenciesService } from './services/task-dependencies.service';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TaskDependenciesService } from './services/task-dependencies.service';
     TaskEventsListComponent,
     PageNotFoundComponent,
     TasksListItemComponent,
-    GanttComponent
+    GanttComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

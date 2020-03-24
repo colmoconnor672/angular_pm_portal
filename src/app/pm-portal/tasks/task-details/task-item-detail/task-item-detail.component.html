@@ -7,9 +7,9 @@
 </div>
 <div  *ngIf="currentTask">
     <div class="row" >
-        <div class="col-md-12">
-            <button class="btn btn-primary" (click)="onEditTask()">Edit</button>
-            <button class="btn btn-primary" (click)="onAddTask()">Add Task</button>
+        <div class="col-md-12 clearfix">
+            <button class="btn btn-info float-right" (click)="onAddTask()">Add Task</button>
+            <button class="btn btn-warning float-right" (click)="onEditTask()">Edit Task</button>
         </div>
     </div>
 

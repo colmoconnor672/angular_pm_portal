@@ -123,10 +123,13 @@ export class AuthService {
 
   private handleError(errorResp: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
-    if (!errorResp.error || !errorResp.error.error) {
+    if (!errorResp.error && !errorResp.error.error) {
       return throwError(errorMessage);
     }
-    switch(errorResp.error.error.message){
+
+    let errorCode = errorResp.error.error ? errorResp.error.error.message : errorResp.error.message;
+    console.log('ERROR - code returned = ' + errorCode);
+    switch(errorCode){
       case 'EMAIL_NOT_FOUND':
         errorMessage = 'This email does not exist!';
         break;

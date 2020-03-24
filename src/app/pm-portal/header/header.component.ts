@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onProjectSelected(id: number) {
     console.log('Header: In onProjectSelected('+ id +') method');
     this.projectsService.projectSelected.next(id);
-    this.projectsService.setCurrentProjectId(id);
+    //this.projectsService.setCurrentProjectId(id);
   }
 
 }

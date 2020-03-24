@@ -1,1 +1,4 @@
-<p #gantt_here  class='gantt-chart'></p>
+
+<app-alert [message]="errorMessage" *ngIf="errorMessage" (close)="onHandleError()"></app-alert>
+
+<div #gantt_here  class='gantt-chart'></div>
