@@ -30,7 +30,9 @@ export class TaskItemEditComponent implements OnInit {
       'description': new FormControl(null, Validators.required),
       'projectId': new FormControl(null),
       'status': new FormControl(null, Validators.required),
-      'statusId': new FormControl(null)
+      'statusId': new FormControl(null),
+      'priority': new FormControl(null, Validators.required),
+      'priorityId': new FormControl(null)
     });
 
     this.sub1 = this.tasksService.taskSelected.subscribe(
@@ -62,7 +64,9 @@ export class TaskItemEditComponent implements OnInit {
             description: task.description,
             projectId: task.projectId,
             status: task.status.description,
-            statusId: task.status.id
+            statusId: task.status.id,
+            priority: task.priority.level,
+            priorityId: task.priority.id
           }
         );
           }

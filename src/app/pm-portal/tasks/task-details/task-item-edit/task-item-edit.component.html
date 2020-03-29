@@ -56,6 +56,19 @@
                 class="help-block">Please enter a valid status!</span>
         </div>
 
+        <!-- currentTask.priority.level -->
+        <div class="form-group">
+          <label for="priority">Priority</label>
+          <input
+            type="text"
+            id="priority"
+            [formControlName]="['priority']"
+            class="form-control">
+            <span 
+              *ngIf="!taskForm.get('priority').valid && taskForm.get('priority').touched" 
+              class="help-block">Please enter a valid priority!</span>
+      </div>
+
         <button class="btn btn-primary" type="submit">Submit</button>
 
       </form>
