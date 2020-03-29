@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.9",
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
+    "date-format-lite": "^17.7.0",
     "dhtmlx-gantt": "^6.3.7",
     "jquery": "^3.4.1",
     "net": "^1.0.2",

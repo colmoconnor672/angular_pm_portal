@@ -6,7 +6,7 @@ import { Task } from '../models/task';
 @Injectable()
 export class TasksService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/tasks';
+  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/task';
 
   taskSelected = new Subject<number>();
   tasksUpdated = new Subject<number>();
