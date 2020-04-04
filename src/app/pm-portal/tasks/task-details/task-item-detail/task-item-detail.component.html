@@ -5,11 +5,13 @@
         </div>
     </div>
 </div>
-<div  *ngIf="currentTask">
+
+<div class="fit-half-panel-width pmp-compact" *ngIf="currentTask">
     <div class="row" >
         <div class="col-md-12 clearfix">
-            <button class="btn btn-info float-right" (click)="onAddTask()">Add Task</button>
-            <button class="btn btn-warning float-right" (click)="onEditTask()">Edit Task</button>
+            <button class="btn btn-info float-right btn-sm" (click)="onAddTask()">Add Task</button>
+            <p class="small-pad-left float-right"></p>
+            <button class="btn btn-warning float-right btn-sm" (click)="onEditTask()">Edit Task</button>
         </div>
     </div>
 
@@ -27,14 +29,22 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p>{{currentTask.status.description}}</p>
+            <span class="bold-title float-left">Status </span> <p class="float-left small-pad-left">{{currentTask.status.description}}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <p>{{currentTask.priority.level}}</p>
+            <span class="bold-title float-left">Priority</span><p class="float-left small-pad-left">{{currentTask.priority.level}}</p>
         </div>
     </div>
+
+    <app-task-events-list [taskItem]="currentTask"></app-task-events-list>
+
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <app-task-events-list [taskItem]="currentTask"></app-task-events-list>
+        </div>
+    </div> -->
 
 </div>

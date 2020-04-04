@@ -1,1 +1,17 @@
-<p>task-events-list works!</p>
+<div class=" clearfix">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary btn-sm float-right" (click)="onAddEvent()">Add Comment</button>
+            <p class="small-pad-left float-right"></p>
+            <button class="btn btn-primary btn-sm float-right" (click)="onAddEvent()">Add File</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="taskItem.taskEvents">    <!-- (click)="onEditEvent()"  -->
+        <div class="col-md-12">
+            <app-task-event-item 
+            *ngFor="let currentEvent of taskItem.taskEvents" 
+                [eventItem]="currentEvent" >
+            </app-task-event-item>
+        </div>
+    </div>
+</div>

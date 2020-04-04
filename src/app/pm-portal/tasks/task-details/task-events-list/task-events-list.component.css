@@ -1,0 +1,19 @@
+.fit-panel-width {
+    width: 90vw;
+}
+
+.redbox {
+    border: solid 1px red;
+}
+
+.bluebox {
+    border: solid 1px blue;
+}
+
+.bold-title {
+    color: blue;
+}
+
+.small-pad-left {
+    padding-left: 1mm;
+}

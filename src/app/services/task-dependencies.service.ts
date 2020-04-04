@@ -10,7 +10,6 @@ export class TaskDependenciesService {
 
   constructor(private http: HttpClient) { }
 
-
   get(): Observable<TaskDependency[]> {
     console.log('........... Entered TaskDependenciesService.get() method .................');
     let result: Observable<TaskDependency[]> = this.http.get<TaskDependency[]>(`${this.baseUrl}`);

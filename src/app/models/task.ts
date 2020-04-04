@@ -1,3 +1,5 @@
+import { TaskEvent } from './taskEvent';
+
 export class Task {
   id: number;
   text: string;
@@ -15,5 +17,9 @@ export class Task {
   start_date: string;
 	progress: number;
 	duration: number;
-	parent: number;
+  parent: number;
+  
+  taskEvents: [
+    TaskEvent
+  ];
 }

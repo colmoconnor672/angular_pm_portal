@@ -1,0 +1,494 @@
+[
+    {
+        "id": 1,
+        "description": "Bootstraps grid system is responsive, and the columns will re-arrange depending on the screen size: On a big screen it might look better with the content organized in three columns, but on a small screen it would be better if the content items were stack",
+        "projectId": 1,
+        "duration": 5,
+        "progress": 0.8,
+        "parent": null,
+        "status": {
+            "id": 4,
+            "description": "Fixed"
+        },
+        "priority": {
+            "id": 1,
+            "level": "Low"
+        },
+        "taskEvents": [
+            {
+                "id": 1,
+                "taskId": 1,
+                "eventType": {
+                    "id": 1,
+                    "description": "User Comment"
+                },
+                "eventUser": {
+                    "id": 6,
+                    "name": "Developer Dave",
+                    "email": "dev@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 6,
+                            "roleName": "ROLE_DEV",
+                            "roleDescription": "Developer"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_DEV",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "dev@test.com"
+                },
+                "comment": "I took steps x and y to solve this issue",
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 7,
+                "taskId": 1,
+                "eventType": {
+                    "id": 3,
+                    "description": "Task Assignment"
+                },
+                "eventUser": {
+                    "id": 3,
+                    "name": "PM John",
+                    "email": "pm@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 3,
+                            "roleName": "ROLE_PM",
+                            "roleDescription": "Project Manager"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_PM",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "pm@test.com"
+                },
+                "comment": "Assigned to TL",
+                "assignedTo": {
+                    "id": 5,
+                    "name": "TL Tracy",
+                    "email": "lead@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 5,
+                            "roleName": "ROLE_LEAD",
+                            "roleDescription": "Team Leader"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_LEAD",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "lead@test.com"
+                },
+                "assignedBy": {
+                    "id": 1,
+                    "name": "Admin User",
+                    "email": "adminGuy@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 1,
+                            "roleName": "ROLE_ADMIN",
+                            "roleDescription": "System Administrator"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_ADMIN",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "adminGuy@test.com"
+                },
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 8,
+                "taskId": 1,
+                "eventType": {
+                    "id": 3,
+                    "description": "Task Assignment"
+                },
+                "eventUser": {
+                    "id": 5,
+                    "name": "TL Tracy",
+                    "email": "lead@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 5,
+                            "roleName": "ROLE_LEAD",
+                            "roleDescription": "Team Leader"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_LEAD",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "lead@test.com"
+                },
+                "comment": "Dave, can you take another look at this issue please? The last fix runs as expected in the first two deployments - but when we apply the fix in the front office environment the display is off a little. Ask Simon for a demo if you need further clarification",
+                "assignedTo": {
+                    "id": 6,
+                    "name": "Developer Dave",
+                    "email": "dev@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 6,
+                            "roleName": "ROLE_DEV",
+                            "roleDescription": "Developer"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_DEV",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "dev@test.com"
+                },
+                "assignedBy": {
+                    "id": 1,
+                    "name": "Admin User",
+                    "email": "adminGuy@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 1,
+                            "roleName": "ROLE_ADMIN",
+                            "roleDescription": "System Administrator"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_ADMIN",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "adminGuy@test.com"
+                },
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 9,
+                "taskId": 1,
+                "eventType": {
+                    "id": 3,
+                    "description": "Task Assignment"
+                },
+                "eventUser": {
+                    "id": 6,
+                    "name": "Developer Dave",
+                    "email": "dev@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 6,
+                            "roleName": "ROLE_DEV",
+                            "roleDescription": "Developer"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_DEV",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "dev@test.com"
+                },
+                "comment": "Assigned to QA",
+                "assignedTo": {
+                    "id": 7,
+                    "name": "QA Guy",
+                    "email": "qa@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 7,
+                            "roleName": "ROLE_QA",
+                            "roleDescription": "Tester"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_QA",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "qa@test.com"
+                },
+                "assignedBy": {
+                    "id": 1,
+                    "name": "Admin User",
+                    "email": "adminGuy@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 1,
+                            "roleName": "ROLE_ADMIN",
+                            "roleDescription": "System Administrator"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_ADMIN",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "adminGuy@test.com"
+                },
+                "event_date": "01-02-2020 10:10"
+            }
+        ],
+        "text": "Add Bootstrap Grids",
+        "start_date": "2020-04-01 00:00:00"
+    },
+    {
+        "id": 2,
+        "description": "Node.js is arguably one of the most powerful JavaScript runtime environment that most people use nowadays to build server-side applications. Node.js is built on Google V8 JavaScript Engine, an open source high-performance JavaScript and WebAssembly engine. The V8 implements ECMAScript and WebAssembly, and runs on Windows 7 or later, macOS 10.12+, and Linux systems that use x64, IA-32, ARM, or MIPS processors. V8 can run standalone, or can be embedded into any C++ application.\nThanks to the community, there are a lot of Node.js modules we can use freely that will help (of not speed-up) you to get the things done. You can use the mighty npm install to install all your needed modules, where you can browse them here. This article will not cover on how to install Node.js and NPM on your local machine, there are already millions of tutorials in the wild, go find one that suits you.",
+        "projectId": 1,
+        "duration": 5,
+        "progress": 0.8,
+        "parent": 1,
+        "status": {
+            "id": 3,
+            "description": "In progress"
+        },
+        "priority": {
+            "id": 3,
+            "level": "High"
+        },
+        "taskEvents": [
+            {
+                "id": 2,
+                "taskId": 2,
+                "eventType": {
+                    "id": 1,
+                    "description": "User Comment"
+                },
+                "eventUser": {
+                    "id": 5,
+                    "name": "TL Tracy",
+                    "email": "lead@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 5,
+                            "roleName": "ROLE_LEAD",
+                            "roleDescription": "Team Leader"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_LEAD",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "lead@test.com"
+                },
+                "comment": "I am currently investigating this issue",
+                "event_date": "01-02-2020 10:10"
+            }
+        ],
+        "text": "Decide on Node.js integration",
+        "start_date": "2020-04-06 00:00:00"
+    },
+    {
+        "id": 3,
+        "description": "Do, i, j, and k to achieve milestone X",
+        "projectId": 1,
+        "duration": 5,
+        "progress": 0.8,
+        "parent": 2,
+        "status": {
+            "id": 1,
+            "description": "Preparing"
+        },
+        "priority": {
+            "id": 2,
+            "level": "Medium"
+        },
+        "taskEvents": [
+            {
+                "id": 3,
+                "taskId": 3,
+                "eventType": {
+                    "id": 1,
+                    "description": "User Comment"
+                },
+                "eventUser": {
+                    "id": 3,
+                    "name": "PM John",
+                    "email": "pm@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 3,
+                            "roleName": "ROLE_PM",
+                            "roleDescription": "Project Manager"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_PM",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "pm@test.com"
+                },
+                "comment": "I added technology X earlier and I am now about to use it to do ABC. In brief, an iterative server handles clients one at a time, in series, while a concurrent server handles many clients at the same time, in parallel. When a server invokes the accept() method of a ServerSocket object, the server thread blocks until a client connects to the server. The server must handle the clients request then go back to listening for further client connections. In an iterative server, the main server method handles each client request in its entirety before moving on to accept the next request. Iterative servers are good when the requests take a known, short period of time. For example, requesting the current day and time from a time-of-day server.",
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 4,
+                "taskId": 3,
+                "eventType": {
+                    "id": 2,
+                    "description": "File Upload"
+                },
+                "eventUser": {
+                    "id": 3,
+                    "name": "PM John",
+                    "email": "pm@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 3,
+                            "roleName": "ROLE_PM",
+                            "roleDescription": "Project Manager"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_PM",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "pm@test.com"
+                },
+                "comment": "File upload #1",
+                "filename": "Test_File_1.txt",
+                "fileExtension": "txt",
+                "filetype": "text",
+                "filePath": "C:\\_Colm\\Final Year Projects\\Project Management Portal\\eclipse_workspace\\pmPortal_File_Storage_Area\\Test_File_1.txt",
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 5,
+                "taskId": 3,
+                "eventType": {
+                    "id": 2,
+                    "description": "File Upload"
+                },
+                "eventUser": {
+                    "id": 4,
+                    "name": "BA Bill",
+                    "email": "ba@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 4,
+                            "roleName": "ROLE_BA",
+                            "roleDescription": "Business Analyst"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_BA",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "ba@test.com"
+                },
+                "comment": "File upload #2",
+                "filename": "Test_File_2.txt",
+                "fileExtension": "txt",
+                "filetype": "text",
+                "filePath": "C:\\_Colm\\Final Year Projects\\Project Management Portal\\eclipse_workspace\\pmPortal_File_Storage_Area\\Test_File_2.txt",
+                "event_date": "01-02-2020 10:10"
+            },
+            {
+                "id": 6,
+                "taskId": 3,
+                "eventType": {
+                    "id": 2,
+                    "description": "File Upload"
+                },
+                "eventUser": {
+                    "id": 2,
+                    "name": "Mike Owner",
+                    "email": "owner@test.com",
+                    "password": "123456",
+                    "orgId": 1,
+                    "roles": [
+                        {
+                            "id": 2,
+                            "roleName": "ROLE_PO",
+                            "roleDescription": "Project Owner"
+                        }
+                    ],
+                    "authorities": null,
+                    "enabled": true,
+                    "rolesString": "ROLE_PO",
+                    "accountNonLocked": true,
+                    "accountNonExpired": true,
+                    "credentialsNonExpired": true,
+                    "authoritiesString": "",
+                    "username": "owner@test.com"
+                },
+                "comment": "Heres a huge file upload comment - Note: Without a forward slash at the end of subfolder addresses, you might generate two requests to the server. Many servers will automatically add a forward slash to the end of the address, and then create a new request.\n\nAssume a Person has an Address with a ZipCode. In that case, the method creates the property traversal x.address.zipCode. The resolution algorithm starts by interpreting the entire part (AddressZipCode) as the property and checks the domain class for a property with that name (uncapitalized). If the algorithm succeeds, it uses that property. If not, the algorithm splits up the source at the camel case parts from the right side into a head and a tail and tries to find the corresponding propertyÔÇëÔÇöÔÇëin our example, AddressZip and Code. If the algorithm finds a property with that head, it takes the tail and continues building the tree down from there, splitting the tail up in the way just described. If the first split does not match, the algorithm moves the split point to the left (Address, ZipCode) and continues.\n\nAlthough this should work for most cases, it is possible for the algorithm to select the wrong property. Suppose the Person class has an addressZip property as well. The algorithm would match in the first split round already, choose the wrong property, and fail (as the type of addressZip probably has no code property).\n\nTo resolve this ambiguity you can use _ inside your method name to manually define traversal points.",
+                "filename": "Test_File_3.txt",
+                "fileExtension": "txt",
+                "filetype": "text",
+                "filePath": "C:\\_Colm\\Final Year Projects\\Project Management Portal\\eclipse_workspace\\pmPortal_File_Storage_Area\\Test_File_3.txt",
+                "event_date": "01-02-2020 10:10"
+            }
+        ],
+        "text": "Task 3",
+        "start_date": "2020-04-11 00:00:00"
+    }
+]

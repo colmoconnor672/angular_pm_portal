@@ -1,3 +1,19 @@
 .fit-panel-width {
     width: 90vw;
 }
+
+.redbox {
+    border: solid 1px red;
+}
+
+.bluebox {
+    border: solid 1px blue;
+}
+
+.greybox {
+    border: groove 1px lightgray;
+}
+
+.margin-1mm {
+    margin: 1mm;    
+}
