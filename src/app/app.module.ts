@@ -31,6 +31,9 @@ import { GanttComponent } from './pm-portal/analysis/gantt/gantt.component';
 import { TaskDependenciesService } from './services/task-dependencies.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { TaskEventItemComponent } from './pm-portal/tasks/task-details/task-events-list/task-event-item/task-event-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -61,8 +64,13 @@ import { TaskEventItemComponent } from './pm-portal/tasks/task-details/task-even
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule
+],
   providers: [
     OrganisationService, 
     TasksService, 

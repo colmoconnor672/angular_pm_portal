@@ -8,6 +8,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 import 'dhtmlx-gantt';
 import { Subscription } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import { TaskPriority } from 'src/app/models/TaskPriority';
 
 @Component({
 	encapsulation: ViewEncapsulation.None,
@@ -116,7 +117,7 @@ export class GanttComponent implements OnInit, OnDestroy {
           // that are not part of gantt dataset
           data.description = data.text;
           data.status = {id: 1, description: "Preparing"};
-          data.priority = {id: 1, priority: "Low"};
+          data.priority = {id: 1, level: "Low"};
 
           // correct the parent.id value which is usually wrong (e.g. 148290467301) !!
           if(data.parent){

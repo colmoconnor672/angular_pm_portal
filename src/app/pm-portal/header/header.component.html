@@ -1,15 +1,16 @@
 <!-- **************** MAIN MENU-BAR OPTIONS **************** -->
 
-  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top redbox">
 
-    <ul class="navbar-nav">
+  <div class="col-md-6">
+      <ul class="navbar-nav greybox">
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
           Projects
         </a>
         <div class="dropdown-menu" >
-          <a class="dropdown-item" *ngFor="let project of projects | async"  (click)="onProjectSelected(project.id)">{{project.name}}</a>
+          <a class="dropdown-item" *ngFor="let project of projects | async"  (click)="onProjectSelected(project)">{{project.name}}</a>
         </div>
       </li>
 
@@ -38,8 +39,28 @@
       </li>
 
     </ul>
+    
+  </div>
 
-    <ul class="navbar-nav navbar-right">
+  <div class="col-md-3 bluebox">
+    <ul class="navbar-nav greybox">
+      <li class="redbox" style="vertical-align: middle; text-align: center;" *ngIf="isAuthenticated">
+          <div style="padding-left: 50px; font-size:smaller; vertical-align: middle; color: white;" *ngIf="!selectedProject">No Project currently selected!</div>
+          <div style="padding-left: 50px; font-size:smaller; vertical-align: middle; color: white;" *ngIf="selectedProject">Current Project: <b>{{ selectedProject.name }}</b></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-2 redbox">
+    <ul class="navbar-nav greybox">
+      <li class="greybox" style="vertical-align: middle; text-align: center;" *ngIf="isAuthenticated">
+        <div style="font-size:smaller;color: white;">Welcome {{ authenticatedUser.name }}</div>
+    </li>
+  </ul>
+</div>
+
+  <div class="col-md-1 bluebox">
+    <ul class="navbar-nav navbar-right greybox">
       <li *ngIf="!isAuthenticated">
         <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
       </li>
@@ -47,6 +68,8 @@
         <a class="nav-link" style="cursor: pointer;" (click)="onLogout()">Logout</a>
       </li>
     </ul>
+  </div>
 
-  </nav>
+
+</nav>
 

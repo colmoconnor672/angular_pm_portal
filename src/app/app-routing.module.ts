@@ -21,7 +21,8 @@ const routes: Routes = [
       { path: 'tasks', component: TasksComponent, 
         children : [
           { path: 'detail/:id', component: TaskItemDetailComponent },
-          { path: 'add', component: TaskItemAddComponent },
+          // { path: 'add', component: TaskItemAddComponent },
+          { path: 'add', component: TaskItemEditComponent },
           { path: 'edit/:id', component: TaskItemEditComponent }
         ]
       },

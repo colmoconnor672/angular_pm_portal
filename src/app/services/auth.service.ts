@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export interface AuthResponseData {
   id: string;
   email: string;
+  name: string;
   orgId: string;
   projectId: number;
   authorities: string;
@@ -47,9 +48,9 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    const registerOrgUserUrl = this.baseUrl + 'login';
+    const loginUrl = this.baseUrl + 'login';
     return this.http.post<AuthResponseData>(
-      registerOrgUserUrl, 
+      loginUrl, 
       {
         email: email, 
         password: password
@@ -61,6 +62,7 @@ export class AuthService {
         this.handleAuthentication(
           resData.email, 
           resData.id, 
+          resData.name,
           resData.authorities,
           resData.roles,
           resData.token, 
@@ -73,6 +75,7 @@ export class AuthService {
     const userData: {
       email: string,
       id: string,
+      name: string,
       authorities: string,
       roles: string,
       _token: string,
@@ -81,7 +84,7 @@ export class AuthService {
     if (!userData) {
       return;
     }
-    const loadedUser = new User(userData.email, userData.id, userData.authorities, userData.roles, userData._token, new Date(userData._tokenExpirationDate));
+    const loadedUser = new User(userData.email, userData.id, userData.name, userData.authorities, userData.roles, userData._token, new Date(userData._tokenExpirationDate));
     
     if(loadedUser.token){
       this.user.next(loadedUser);
@@ -110,11 +113,11 @@ export class AuthService {
 
 
 
-  private handleAuthentication(email: string, userId: string, authorities: string, roles: string, token: string, expiresIn: number) {
+  private handleAuthentication(email: string, userId: string, name: string, authorities: string, roles: string, token: string, expiresIn: number) {
     const expirationDate = new Date(
       new Date().getTime() + (expiresIn * 1000) 
     );
-    const user = new User(email, userId, authorities, roles, token, expirationDate)
+    const user = new User(email, userId, name, authorities, roles, token, expirationDate)
     this.user.next(user);
 
     this.autoLogout(expiresIn * 1000);

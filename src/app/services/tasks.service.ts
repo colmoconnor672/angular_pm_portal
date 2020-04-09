@@ -51,17 +51,17 @@ export class TasksService {
     return task;
   }
 
-  createTask(task: Task): Observable<Object> {
-    let result: Observable<Object> = null;
+  createTask(task: Task): Observable<any> {
+    let result: Observable<any> = null;
     result = this.http.post(`${this.baseUrl}`, task);
     this.tasksUpdated.next(task.id)
     return result;
   }
 
-  updateTask(id: number, value: any): Observable<Object> {
-    let result: Observable<Object> = null;
+  updateTask(id: number, value: any): Observable<any> {
+    let result: Observable<any> = null;
     result = this.http.put(`${this.baseUrl}/${id}`, value);
-    this.tasksUpdated.next(id)
+    this.tasksUpdated.next(id);
     return result;
   }
 

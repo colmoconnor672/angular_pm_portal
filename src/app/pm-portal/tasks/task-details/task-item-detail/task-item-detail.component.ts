@@ -13,6 +13,7 @@ export class TaskItemDetailComponent implements OnInit {
   private taskid: number;
   currentTask: Observable<Task>;
   private sub1: Subscription;
+  private sub2: Subscription;
 
   constructor(
     private tasksService: TasksService, 
@@ -22,14 +23,22 @@ export class TaskItemDetailComponent implements OnInit {
   ngOnInit() {
     this.sub1 = this.tasksService.taskSelected.subscribe(
       (selectedTaskId: number) => {
-        console.log('selectedTaskId value = ' + selectedTaskId);
+        console.log('TIDC - tasksService.taskSelected.subscribe(.) - selectedTaskId value = ' + selectedTaskId);
         this.loadData(selectedTaskId);
+      }
+    );
+
+    this.sub2 = this.tasksService.tasksUpdated.subscribe(
+      (updatedTaskId: number) => {
+        console.log('TIDC - tasksService.tasksUpdated.subscribe(.) - updatedTaskId value = ' + updatedTaskId);
+        this.loadData(updatedTaskId);
       }
     );
 
     this.route.params.subscribe(
       (params: Params) => {
         this.taskid = params['id'];
+        console.log('TIDC - route.params.subscribe(..) route TaskId value = ' + this.taskid);
         this.loadData(this.taskid);
       }
     )
@@ -51,11 +60,12 @@ export class TaskItemDetailComponent implements OnInit {
   }
 
   onAddTask(){
-    this.router.navigate(['../../add'], {relativeTo: this.route} );
+    this.router.navigate(['../../add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
   }
 
   ngOnDestroy(){
     this.sub1.unsubscribe();
+    this.sub2.unsubscribe();
   }
 
 }

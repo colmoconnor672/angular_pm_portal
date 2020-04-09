@@ -15,6 +15,7 @@ export class TasksListComponent implements OnInit {
   tasks: Observable<Task[]>;
   projectId: number;
   sub1: Subscription;
+  sub2: Subscription;
 
 
   constructor(
@@ -37,6 +38,15 @@ export class TasksListComponent implements OnInit {
         this.reloadData();
       }
     );
+
+    this.sub2 = this.tasksService.tasksUpdated.subscribe(
+      (updatedTaskId: number) => {
+        console.log('updatedTaskId value = ' + updatedTaskId);
+        this.reloadData();
+      }
+    );
+
+
   }
 
   reloadData() {
@@ -57,6 +67,7 @@ export class TasksListComponent implements OnInit {
   ngOnDestroy(){
     console.log('TLC - In ngOnDestroy() method');
     this.sub1.unsubscribe();
+    this.sub2.unsubscribe();
   }
 
 }

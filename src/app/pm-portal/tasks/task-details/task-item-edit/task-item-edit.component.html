@@ -1,76 +1,112 @@
-<div class="row fit-panel-width">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" >
-      
-      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="text">Title</label>
+<div class="row pmp-compact fit-half-panel-width list-group-item">
+  <div class="col-md-12">
 
-          <!-- <input
-            type="text"
-            id="title"
-            formControlName="title"
-            class="form-control"> -->
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
 
-           <textarea
-                id="text"
-                formControlName="text"
-                class="form-control">
-            </textarea>
-
-
-          <span 
-            *ngIf="!taskForm.get('text').valid && taskForm.get('text').touched" 
-            class="help-block">Please enter a valid title text!</span>
-        </div>
-
-        <div class="form-group">
-          <label for="description">Description</label>
-
-          <!-- 
-            <input
-            type="text"
-            id="description"
-            [formControlName]="['description']"
-            class="form-control"> -->
-
-           <textarea
-            id="description"
-            [formControlName]="['description']"
-            class="form-control">
-          </textarea>
-
-            <span 
-              *ngIf="!taskForm.get('description').valid && taskForm.get('description').touched" 
-              class="help-block">Please enter a valid description!</span>
-        </div>
-
-        <div class="form-group">
-            <label for="status">status</label>
-            <input
-              type="text"
-              id="status"
-              [formControlName]="['status']"
-              class="form-control">
-              <span 
-                *ngIf="!taskForm.get('status').valid && taskForm.get('status').touched" 
-                class="help-block">Please enter a valid status!</span>
-        </div>
-
-        <!-- currentTask.priority.level -->
-        <div class="form-group">
-          <label for="priority">Priority</label>
-          <input
-            type="text"
-            id="priority"
-            [formControlName]="['priority']"
-            class="form-control">
-            <span 
-              *ngIf="!taskForm.get('priority').valid && taskForm.get('priority').touched" 
-              class="help-block">Please enter a valid priority!</span>
+      <!-- Project -->
+      <div class="form-group">
+        <label for="projectId">Project</label>
+        <select name="projectId" formControlName="projectId" class="form-control">
+          <option [ngValue]="null" disabled>Choose Project</option>
+          <option *ngFor="let project of allProjects" [ngValue]="project.id">
+            {{ project.name }}
+          </option>
+        </select>
+        <span class="help-block" 
+          *ngIf="!taskForm.get('projectId').valid && taskForm.get('projectId').touched" >
+          Please select a valid Project!</span>
       </div>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+      <!-- Title -->
+      <div class="form-group">
+        <label for="text">Title</label>
+        <textarea id="text" formControlName="text" class="form-control">
+        </textarea>
+        <span class="help-block" 
+          *ngIf="!taskForm.get('text').valid && taskForm.get('text').touched" >
+          Please enter a valid title text!</span>
+      </div>
 
-      </form>
-    </div>
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" [formControlName]="['description']" class="form-control">
+        </textarea>
+        <span *ngIf="!taskForm.get('description').valid && taskForm.get('description').touched"
+          class="help-block">Please enter a valid description!</span>
+      </div>
+
+      <!-- Status -->
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select name="status" formControlName="status" class="form-control">
+          <option [ngValue]="null" disabled>Choose Status</option>
+          <option *ngFor="let status of allStatus" [ngValue]="status.id">
+            {{ status.description }}
+          </option>
+        </select>
+        <span *ngIf="!taskForm.get('status').valid && taskForm.get('status').touched" class="help-block">Please enter a
+          valid status!</span>
+      </div>
+
+      <!-- Priority -->
+      <div class="form-group">
+        <label for="priority">Priority</label>
+        <select name="priority" formControlName="priority" class="form-control">
+          <option [ngValue]="null" disabled>Choose Priority</option>
+          <option *ngFor="let priority of allPriorities" [ngValue]="priority.id">
+            {{ priority.level }}
+          </option>
+        </select>
+        <span *ngIf="!taskForm.get('priority').valid && taskForm.get('priority').touched" class="help-block">Please
+          enter a valid priority!</span>
+      </div>
+
+      <!-- Start Date -->
+      <div class="form-group">
+        <label for="start_date">Start Date</label>
+        <div class="clearfix">
+        <input matInput [matDatepicker]="start_date" [formControlName]="['start_date']" class="form-control float-left" style="width: 92%;" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="start_date" class="float-right"></mat-datepicker-toggle>
+        <mat-datepicker #start_date startView="month" ></mat-datepicker>
+        </div>
+        <span *ngIf="!taskForm.get('start_date').valid && taskForm.get('start_date').touched"
+          class="help-block">Please enter a valid Start Date!</span>
+      </div>
+
+      <!-- Progress -->
+      <div class="form-group">
+        <label for="description">Progress</label>
+        <mat-slider #progressSlider class="form-control" [formControlName]="['progress']" 
+          min="0" max="1" step="0.05" thumbLabel="true" [displayWith]="formatProgressLabel(someProperty)" 
+          (change)="onProgressSliderChanged(progressSlider.value)">
+        </mat-slider>
+        <span *ngIf="!taskForm.get('progress').valid && taskForm.get('progress').touched"
+          class="help-block">Please enter a valid Progess value!</span>
+      </div>
+
+      <!-- Duration -->
+      <div class="form-group">
+        <label for="duration">Duration (in days)</label>
+        <input id="duration" type="text" [formControlName]="['duration']" class="form-control">
+        <span *ngIf="!taskForm.get('duration').valid && taskForm.get('duration').touched"
+          class="help-block">Please enter a valid Duration value!</span>
+      </div>
+
+      <!-- Parent Task -->
+      <div class="form-group">
+        <label for="parent">Parent Task</label>
+        <select name="parent" formControlName="parent" class="form-control">
+          <option [ngValue]="null">No Parent Task</option>
+          <option *ngFor="let task of allTasks" [ngValue]="task.id">
+            {{ task.text }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
   </div>
+</div>

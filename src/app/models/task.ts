@@ -1,18 +1,14 @@
 import { TaskEvent } from './taskEvent';
+import { TaskStatus } from './TaskStatus';
+import { TaskPriority } from './TaskPriority';
 
 export class Task {
   id: number;
   text: string;
   description: string;
   projectId: number;
-  status: {
-    id: number;
-    description: string;
-  };
-  priority: {
-    id: number;
-    priority: string;
-  };
+  status: TaskStatus;
+  priority: TaskPriority;
   
   start_date: string;
 	progress: number;

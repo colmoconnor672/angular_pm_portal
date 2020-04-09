@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "description": "Bootstraps grid system is responsive, and the columns will re-arrange depending on the screen size: On a big screen it might look better with the content organized in three columns, but on a small screen it would be better if the content items were stack",
+        "description": "Bootstraps grid system is responsive, and the columns will re-arrange depending on the screen size: On a big screen it might look better with the content organized in three columns, but on a small screen it would be better if the content items were stacked",
         "projectId": 1,
         "duration": 5,
         "progress": 0.8,
@@ -37,12 +37,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_DEV",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "dev@test.com"
+                    "rolesString": "ROLE_DEV",
+                    "username": "dev@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "I took steps x and y to solve this issue",
                 "event_date": "01-02-2020 10:10"
@@ -69,12 +69,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_PM",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "pm@test.com"
+                    "rolesString": "ROLE_PM",
+                    "username": "pm@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "Assigned to TL",
                 "assignedTo": {
@@ -92,12 +92,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_LEAD",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "lead@test.com"
+                    "rolesString": "ROLE_LEAD",
+                    "username": "lead@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "assignedBy": {
                     "id": 1,
@@ -114,12 +114,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_ADMIN",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "adminGuy@test.com"
+                    "rolesString": "ROLE_ADMIN",
+                    "username": "adminGuy@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "event_date": "01-02-2020 10:10"
             },
@@ -145,12 +145,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_LEAD",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "lead@test.com"
+                    "rolesString": "ROLE_LEAD",
+                    "username": "lead@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "Dave, can you take another look at this issue please? The last fix runs as expected in the first two deployments - but when we apply the fix in the front office environment the display is off a little. Ask Simon for a demo if you need further clarification",
                 "assignedTo": {
@@ -168,12 +168,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_DEV",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "dev@test.com"
+                    "rolesString": "ROLE_DEV",
+                    "username": "dev@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "assignedBy": {
                     "id": 1,
@@ -190,12 +190,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_ADMIN",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "adminGuy@test.com"
+                    "rolesString": "ROLE_ADMIN",
+                    "username": "adminGuy@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "event_date": "01-02-2020 10:10"
             },
@@ -221,14 +221,14 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_DEV",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "dev@test.com"
+                    "rolesString": "ROLE_DEV",
+                    "username": "dev@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
-                "comment": "Assigned to QA",
+                "comment": "Assigned to QA Guy",
                 "assignedTo": {
                     "id": 7,
                     "name": "QA Guy",
@@ -244,12 +244,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_QA",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "qa@test.com"
+                    "rolesString": "ROLE_QA",
+                    "username": "qa@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "assignedBy": {
                     "id": 1,
@@ -266,12 +266,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_ADMIN",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "adminGuy@test.com"
+                    "rolesString": "ROLE_ADMIN",
+                    "username": "adminGuy@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "event_date": "01-02-2020 10:10"
             }
@@ -317,12 +317,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_LEAD",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "lead@test.com"
+                    "rolesString": "ROLE_LEAD",
+                    "username": "lead@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "I am currently investigating this issue",
                 "event_date": "01-02-2020 10:10"
@@ -339,12 +339,12 @@
         "progress": 0.8,
         "parent": 2,
         "status": {
-            "id": 1,
-            "description": "Preparing"
+            "id": 3,
+            "description": "In progress"
         },
         "priority": {
-            "id": 2,
-            "level": "Medium"
+            "id": 3,
+            "level": "High"
         },
         "taskEvents": [
             {
@@ -369,12 +369,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_PM",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "pm@test.com"
+                    "rolesString": "ROLE_PM",
+                    "username": "pm@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "I added technology X earlier and I am now about to use it to do ABC. In brief, an iterative server handles clients one at a time, in series, while a concurrent server handles many clients at the same time, in parallel. When a server invokes the accept() method of a ServerSocket object, the server thread blocks until a client connects to the server. The server must handle the clients request then go back to listening for further client connections. In an iterative server, the main server method handles each client request in its entirety before moving on to accept the next request. Iterative servers are good when the requests take a known, short period of time. For example, requesting the current day and time from a time-of-day server.",
                 "event_date": "01-02-2020 10:10"
@@ -401,12 +401,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_PM",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "pm@test.com"
+                    "rolesString": "ROLE_PM",
+                    "username": "pm@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "File upload #1",
                 "filename": "Test_File_1.txt",
@@ -437,12 +437,12 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_BA",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "ba@test.com"
+                    "rolesString": "ROLE_BA",
+                    "username": "ba@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
                 "comment": "File upload #2",
                 "filename": "Test_File_2.txt",
@@ -473,14 +473,14 @@
                     ],
                     "authorities": null,
                     "enabled": true,
-                    "rolesString": "ROLE_PO",
-                    "accountNonLocked": true,
-                    "accountNonExpired": true,
-                    "credentialsNonExpired": true,
                     "authoritiesString": "",
-                    "username": "owner@test.com"
+                    "rolesString": "ROLE_PO",
+                    "username": "owner@test.com",
+                    "accountNonLocked": true,
+                    "credentialsNonExpired": true,
+                    "accountNonExpired": true
                 },
-                "comment": "Heres a huge file upload comment - Note: Without a forward slash at the end of subfolder addresses, you might generate two requests to the server. Many servers will automatically add a forward slash to the end of the address, and then create a new request.\n\nAssume a Person has an Address with a ZipCode. In that case, the method creates the property traversal x.address.zipCode. The resolution algorithm starts by interpreting the entire part (AddressZipCode) as the property and checks the domain class for a property with that name (uncapitalized). If the algorithm succeeds, it uses that property. If not, the algorithm splits up the source at the camel case parts from the right side into a head and a tail and tries to find the corresponding propertyÔÇëÔÇöÔÇëin our example, AddressZip and Code. If the algorithm finds a property with that head, it takes the tail and continues building the tree down from there, splitting the tail up in the way just described. If the first split does not match, the algorithm moves the split point to the left (Address, ZipCode) and continues.\n\nAlthough this should work for most cases, it is possible for the algorithm to select the wrong property. Suppose the Person class has an addressZip property as well. The algorithm would match in the first split round already, choose the wrong property, and fail (as the type of addressZip probably has no code property).\n\nTo resolve this ambiguity you can use _ inside your method name to manually define traversal points.",
+                "comment": "Heres a huge file upload comment - Note: Without a forward slash at the end of subfolder addresses, you might generate two requests to the server. Many servers will automatically add a forward slash to the end of the address, and then create a new request.\n\nAssume a Person has an Address with a ZipCode. In that case, the method creates the property traversal x.address.zipCode. The resolution algorithm starts by interpreting the entire part (AddressZipCode) as the property and checks the domain class for a property with that name (uncapitalized). If the algorithm succeeds, it uses that property. If not, the algorithm splits up the source at the camel case parts from the right side into a head and a tail and tries to find the corresponding property in our example, AddressZip and Code. If the algorithm finds a property with that head, it takes the tail and continues building the tree down from there, splitting the tail up in the way just described. If the first split does not match, the algorithm moves the split point to the left (Address, ZipCode) and continues.\n\nAlthough this should work for most cases, it is possible for the algorithm to select the wrong property. Suppose the Person class has an addressZip property as well. The algorithm would match in the first split round already, choose the wrong property, and fail (as the type of addressZip probably has no code property).\n\nTo resolve this ambiguity you can use _ inside your method name to manually define traversal points.",
                 "filename": "Test_File_3.txt",
                 "fileExtension": "txt",
                 "filetype": "text",
@@ -488,7 +488,45 @@
                 "event_date": "01-02-2020 10:10"
             }
         ],
-        "text": "Task 3",
+        "text": "Address Milestone XXXXX",
         "start_date": "2020-04-11 00:00:00"
+    },
+    {
+        "id": 4,
+        "description": "New task 1",
+        "projectId": 1,
+        "duration": 1,
+        "progress": 0.3,
+        "parent": 0,
+        "status": {
+            "id": 3,
+            "description": "In progress"
+        },
+        "priority": {
+            "id": 4,
+            "level": "Emergency"
+        },
+        "taskEvents": [],
+        "text": "New task 1 - test",
+        "start_date": "2020-04-01 00:00:00"
+    },
+    {
+        "id": 5,
+        "description": "New task 2",
+        "projectId": 1,
+        "duration": 2,
+        "progress": 0.5,
+        "parent": 4,
+        "status": {
+            "id": 5,
+            "description": "Verified"
+        },
+        "priority": {
+            "id": 3,
+            "level": "High"
+        },
+        "taskEvents": [],
+        "text": "New task 2 TEST TESTY",
+        "start_date": "2020-04-01 00:00:00"
     }
 ]

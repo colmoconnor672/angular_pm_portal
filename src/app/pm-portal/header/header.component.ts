@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { OrganisationService } from 'src/app/services/organisation.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { Project } from 'src/app/models/project';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,17 @@ import { Project } from 'src/app/models/project';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  authenticatedUser: User;
   isAuthenticated = false;
   collapsed = true;
   sub1: Subscription;
   sub2: Subscription;
+  sub3: Subscription;
 
   organisationId: number;
   projectsUrl: string;
   projects: Observable<Project[]>;
+  selectedProject: Project;
 
   constructor(
     private authService: AuthService, 
@@ -31,6 +35,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     console.log('Header: In ngOnInit() method');
     this.sub1 = this.authService.user.subscribe(user => {
       console.log('Header: In authService.user.subscribe(..) method');
+      this.authenticatedUser = user;
       //this.isAuthenticated = (!user) ? false : true;
       this.isAuthenticated = !!user;
       console.log('Header: Exiting authService.user.subscribe(..) method. isAuthenticated = ' + this.isAuthenticated);
@@ -70,10 +75,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     console.log('Header: Exiting onLogout() method');
   }
 
-  onProjectSelected(id: number) {
-    console.log('Header: In onProjectSelected('+ id +') method');
-    this.projectsService.projectSelected.next(id);
-    //this.projectsService.setCurrentProjectId(id);
+  onProjectSelected(selectedProject: Project) {
+    console.log('Header: In onProjectSelected('+ selectedProject.id +') method');
+    this.selectedProject = selectedProject;
+    // this.projectsService.getProject(id).subscribe(project => {
+    //   this.selectedProject = project;
+    // });
+    this.projectsService.projectSelected.next(selectedProject.id);
   }
 
 }

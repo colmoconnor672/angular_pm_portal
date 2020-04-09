@@ -5,3 +5,22 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
 .fit-panel-width {
     width: 75vw;
 }
+
+.fit-half-panel-width {
+    width: 48vw;
+}
+
+
+/* Increase all font sizes on mobile */
+@media (max-width: 767px) { 
+    
+    .fit-half-panel-width {
+        /* default is 1rem or 16px */
+        width: 85vw;
+    }
+}
+
+.small-image {
+    height: 20px; 
+    width: 20px;
+}
