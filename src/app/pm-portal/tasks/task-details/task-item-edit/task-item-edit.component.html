@@ -1,7 +1,7 @@
 <div class="row pmp-compact fit-half-panel-width list-group-item">
   <div class="col-md-12">
 
-    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <form class="pmp-compact" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
 
       <!-- Project -->
       <div class="form-group">
@@ -9,7 +9,7 @@
         <select name="projectId" formControlName="projectId" class="form-control">
           <option [ngValue]="null" disabled>Choose Project</option>
           <option *ngFor="let project of allProjects" [ngValue]="project.id">
-            {{ project.name }}
+            {{ project.name  | slice:0:50 }}<span *ngIf="project.name.length > 50"> ...</span>
           </option>
         </select>
         <span class="help-block" 

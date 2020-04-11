@@ -1,0 +1,9 @@
+.sml-white-text {
+    font-size:smaller; 
+    color: white;
+}
+
+.centered-full-width {
+    width: 100%; 
+    text-align: center;
+}
