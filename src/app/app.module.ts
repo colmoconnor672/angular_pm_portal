@@ -8,7 +8,6 @@ import { PmPortalComponent } from './pm-portal/pm-portal.component';
 import { HeaderComponent } from './pm-portal/header/header.component';
 import { TasksComponent } from './pm-portal/tasks/tasks.component';
 import { UsersComponent } from './pm-portal/users/users.component';
-import { TaskDependenciesComponent } from './pm-portal/task-dependencies/task-dependencies.component';
 import { ChatsComponent } from './pm-portal/chats/chats.component';
 import { MentionsComponent } from './pm-portal/mentions/mentions.component';
 import { AnalysisComponent } from './pm-portal/analysis/analysis.component';
@@ -27,13 +26,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TasksListItemComponent } from './pm-portal/tasks/tasks-list/tasks-list-item/tasks-list-item.component';
 import { WebsocketService } from './services/websocket.service';
-import { GanttComponent } from './pm-portal/analysis/gantt/gantt.component';
+import { GanttComponent } from './pm-portal/task-scheduling/gantt/gantt.component';
 import { TaskDependenciesService } from './services/task-dependencies.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { TaskEventItemComponent } from './pm-portal/tasks/task-details/task-events-list/task-event-item/task-event-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
 import { MatSliderModule } from '@angular/material/slider';
+import { TaskSchedulingComponent } from './pm-portal/task-scheduling/task-scheduling.component';
+import { NumberCardChartComponent } from './pm-portal/analysis/number-card-chart/number-card-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +45,8 @@ import { MatSliderModule } from '@angular/material/slider';
     PmPortalComponent,
     HeaderComponent,
     TasksComponent,
+    TaskSchedulingComponent,
     UsersComponent,
-    TaskDependenciesComponent,
     ChatsComponent,
     MentionsComponent,
     AnalysisComponent,
@@ -57,7 +60,9 @@ import { MatSliderModule } from '@angular/material/slider';
     TasksListItemComponent,
     GanttComponent,
     AlertComponent,
-    TaskEventItemComponent
+    TaskEventItemComponent,
+    NumberCardChartComponent,
+    HorizontalBarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule
+    MatSliderModule,
+    NgxChartsModule
 ],
   providers: [
     OrganisationService, 

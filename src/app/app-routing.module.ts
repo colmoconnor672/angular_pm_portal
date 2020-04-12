@@ -5,14 +5,15 @@ import { PmPortalComponent } from './pm-portal/pm-portal.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ChatsComponent } from './pm-portal/chats/chats.component';
 import { TasksComponent } from './pm-portal/tasks/tasks.component';
-import { TaskDependenciesComponent } from './pm-portal/task-dependencies/task-dependencies.component';
 import { UsersComponent } from './pm-portal/users/users.component';
 import { MentionsComponent } from './pm-portal/mentions/mentions.component';
 import { AnalysisComponent } from './pm-portal/analysis/analysis.component';
 import { TaskDetailsComponent } from './pm-portal/tasks/task-details/task-details.component';
 import { TaskItemDetailComponent } from './pm-portal/tasks/task-details/task-item-detail/task-item-detail.component';
-import { TaskItemAddComponent } from './pm-portal/tasks/task-details/task-item-add/task-item-add.component';
 import { TaskItemEditComponent } from './pm-portal/tasks/task-details/task-item-edit/task-item-edit.component';
+import { TaskSchedulingComponent } from './pm-portal/task-scheduling/task-scheduling.component';
+import { NumberCardChartComponent } from './pm-portal/analysis/number-card-chart/number-card-chart.component';
+import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,16 +22,20 @@ const routes: Routes = [
       { path: 'tasks', component: TasksComponent, 
         children : [
           { path: 'detail/:id', component: TaskItemDetailComponent },
-          // { path: 'add', component: TaskItemAddComponent },
           { path: 'add', component: TaskItemEditComponent },
           { path: 'edit/:id', component: TaskItemEditComponent }
         ]
       },
-      { path: 'task-deps', component: TaskDependenciesComponent },
+      { path: 'task-schedule', component: TaskSchedulingComponent },
       { path: 'users', component: UsersComponent },
       { path: 'chats', component: ChatsComponent },
       { path: 'mentions', component: MentionsComponent },
-      { path: 'analysis', component: AnalysisComponent }
+      { path: 'analysis', component: AnalysisComponent,
+        children : [
+          { path: 'number-card-chart', component: NumberCardChartComponent },
+          { path: 'horizontal-bar-chart', component: HorizontalBarChartComponent },
+        ] 
+      }
     ] 
   },
 
