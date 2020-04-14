@@ -28,6 +28,7 @@ import { OrganisationService } from 'src/app/services/organisation.service';
   ]
 })
 export class TaskItemEditComponent implements OnInit {
+  
   private isAddMode: boolean = false;
   private orgId: number;
   private projectId: number;

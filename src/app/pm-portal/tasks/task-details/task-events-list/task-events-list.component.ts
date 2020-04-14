@@ -12,9 +12,9 @@ import { TaskEvent } from 'src/app/models/taskEvent';
   styleUrls: ['./task-events-list.component.css']
 })
 export class TaskEventsListComponent implements OnInit {
-  private taskid: number;
-  currentTask: Observable<Task>;
-  private sub1: Subscription;
+  //private taskid: number;
+  //currentTask: Observable<Task>;
+  //private sub1: Subscription;
   //eventsList: TaskEvent[];
 
   @Input() taskItem: Task;
@@ -25,37 +25,37 @@ export class TaskEventsListComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.sub1 = this.tasksService.taskSelected.subscribe(
-      (selectedTaskId: number) => {
-        console.log('TEL - taskSelected: selectedTaskId value = ' + selectedTaskId);
-        this.taskid = selectedTaskId;
-        //this.loadData(selectedTaskId);
-      }
-    );
+    // this.sub1 = this.tasksService.taskSelected.subscribe(
+    //   (selectedTaskId: number) => {
+    //     console.log('TEL - taskSelected: selectedTaskId value = ' + selectedTaskId);
+    //     this.taskid = selectedTaskId;
+    //     //this.loadData(selectedTaskId);
+    //   }
+    // );
 
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.taskid = params['id'];
-        if(this.taskid){
-          console.log('TEL - route.params: selectedTaskId value = ' + this.taskid);
-          //this.loadData(this.taskid);
-        }
-      }
-    )
+    // this.route.params.subscribe(
+    //   (params: Params) => {
+    //     this.taskid = params['id'];
+    //     if(this.taskid){
+    //       console.log('TEL - route.params: selectedTaskId value = ' + this.taskid);
+    //       //this.loadData(this.taskid);
+    //     }
+    //   }
+    // )
 
   }
 
-  loadData(taskId: number) {
-    this.tasksService.getTask(taskId).subscribe(
-      task => {
-        console.log('task = ' + task);
-        this.currentTask = task;
+  // loadData(taskId: number) {
+  //   this.tasksService.getTask(taskId).subscribe(
+  //     task => {
+  //       console.log('task = ' + task);
+  //       this.currentTask = task;
         
-        // TODO - Now get list of associated Events for display
-        //this.eventsList = this.currentTask.
-      }
-    );
-  }
+  //       // TODO - Now get list of associated Events for display
+  //       //this.eventsList = this.currentTask.
+  //     }
+  //   );
+  // }
 
   onEditEvent(){
     const id: number = + this.route.snapshot.params['id'];
@@ -66,8 +66,13 @@ export class TaskEventsListComponent implements OnInit {
     this.router.navigate(['../../add'], {relativeTo: this.route} );
   }
 
+  onAddCommentEvent(){
+    this.router.navigate(['../../comment/add'], {relativeTo: this.route} );
+  }
+
+
   ngOnDestroy(){
-    this.sub1.unsubscribe();
+    //this.sub1.unsubscribe();
   }
   
 }

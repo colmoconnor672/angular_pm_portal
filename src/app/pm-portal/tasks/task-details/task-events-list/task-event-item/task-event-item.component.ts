@@ -3,6 +3,7 @@ import { TaskEvent } from 'src/app/models/taskEvent';
 import { TaskDependenciesService } from 'src/app/services/task-dependencies.service';
 import { TaskEventsService } from 'src/app/services/task-events.service';
 import * as FileSaver from 'file-saver';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-task-event-item',
@@ -10,12 +11,15 @@ import * as FileSaver from 'file-saver';
   styleUrls: ['./task-event-item.component.css']
 })
 export class TaskEventItemComponent implements OnInit {
-
+  private isAuthor = false;
   @Input() eventItem: TaskEvent;
 
-  constructor(private taskEventsService: TaskEventsService) { }
+  constructor(private taskEventsService: TaskEventsService, private authService: AuthService) { }
 
   ngOnInit() {
+    if(this.authService.isCurrentUserId(this.eventItem.eventUser.id) ) {
+      this.isAuthor = true;
+    }
   }
 
   onOpenFile(id:number){

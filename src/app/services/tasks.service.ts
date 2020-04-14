@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Task } from '../models/task';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class TasksService {
 
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/task';
 
-  taskSelected = new Subject<number>();
+  taskSelected = new BehaviorSubject<number>(null);
   tasksUpdated = new Subject<number>();
 
   constructor(private http: HttpClient) { }

@@ -59,10 +59,6 @@ export class TasksListComponent implements OnInit {
     console.log('TLC - Leaving reloadData() method');
   }
   
-  onTaskSelected(taskId:number) {
-    console.log('TLC - In onTaskSelected() method');
-    this.tasksService.taskSelected.next(taskId);
-  }
   
   ngOnDestroy(){
     console.log('TLC - In ngOnDestroy() method');

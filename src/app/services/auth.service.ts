@@ -154,4 +154,7 @@ export class AuthService {
     return throwError(errorMessage);
   }
   
+  public isCurrentUserId(userId: number): boolean {
+    return userId === +this.user.getValue().id;
+  }
 }

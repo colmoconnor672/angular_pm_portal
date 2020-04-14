@@ -2,7 +2,7 @@
 
     <!--  **************** FILE UPLOAD ROW TYPE **************** -->
     
-    <div class="float-right" *ngIf="eventItem.eventType.description === 'File Upload' ">
+    <div class="float-right" *ngIf="eventItem.eventType.description === 'Upload' ">
         <span class="small-text"><b>{{eventItem.filename}}</b> uploaded on {{eventItem.event_date}} </span>
         <img class="images small-image cursor-pointer" title="Open {{eventItem.filename}}" src="assets/images/FileOpen.png" (click)="onOpenFile(eventItem.id)"/>
         <img class="images small-image cursor-pointer" title="Download {{eventItem.filename}}" src="assets/images/FileDwnld_1.jpg" (click)="onDownloadFile(eventItem.id, eventItem.filename)"/>
@@ -11,7 +11,7 @@
 
     <!--  **************** TASK ASSIGNMENT ROW TYPE **************** -->
     
-    <div *ngIf="eventItem.eventType.description === 'Task Assignment' ">
+    <div *ngIf="eventItem.eventType.description === 'Assignment' ">
         <div class="float-right">
             <span class="small-text">{{eventItem.assignedBy.name}} assigned to {{eventItem.assignedTo.name}} on {{eventItem.event_date}} </span>
             <img class="images small-image" title="Assigned to {{eventItem.assignedTo.name}}" src="assets/images/Reassignment.png"/>
@@ -20,16 +20,19 @@
 
     <!--  **************** USER COMMENT ROW TYPE **************** -->
 
-    <div class="float-right" *ngIf="eventItem.eventType.description === 'User Comment' ">
+    <div class="float-right" *ngIf="eventItem.eventType.description === 'Comment' ">
         <span class="small-text"> Comment by {{ eventItem.eventUser.name }} on {{eventItem.event_date}} </span>
         <img class="images small-image" title="Comment by {{eventItem.eventUser.name}}" src="assets/images/UserComment.png"/>
     </div>
 
-    <a class="cursor-pointer" routerLinkActive="active" [routerLink]="['detail', eventItem.id]">
-
+    <a *ngIf="isAuthor" class="cursor-pointer" routerLinkActive="active" [routerLink]="['../../comment/edit', eventItem.id]">
         <div class="float-left">
             <p class="list-group-item-heading">{{eventItem.comment}}</p>
         </div>
     </a>
+
+    <div *ngIf="!isAuthor" class="float-left">
+        <p class="list-group-item-heading">{{eventItem.comment}}</p>
+    </div>
 
 </div>

@@ -14,6 +14,8 @@ import { TaskItemEditComponent } from './pm-portal/tasks/task-details/task-item-
 import { TaskSchedulingComponent } from './pm-portal/task-scheduling/task-scheduling.component';
 import { NumberCardChartComponent } from './pm-portal/analysis/number-card-chart/number-card-chart.component';
 import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
+import { StackedVerticalBarChartComponent } from './pm-portal/analysis/stacked-vertical-bar-chart/stacked-vertical-bar-chart.component';
+import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-item-comment/task-item-comment.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,7 +25,10 @@ const routes: Routes = [
         children : [
           { path: 'detail/:id', component: TaskItemDetailComponent },
           { path: 'add', component: TaskItemEditComponent },
-          { path: 'edit/:id', component: TaskItemEditComponent }
+          { path: 'edit/:id', component: TaskItemEditComponent },
+          { path: 'comment/add', component: TaskItemCommentComponent },
+          { path: 'comment/edit/:id', component: TaskItemCommentComponent },
+
         ]
       },
       { path: 'task-schedule', component: TaskSchedulingComponent },
@@ -34,6 +39,7 @@ const routes: Routes = [
         children : [
           { path: 'number-card-chart', component: NumberCardChartComponent },
           { path: 'horizontal-bar-chart', component: HorizontalBarChartComponent },
+          { path: 'stacked-vertical-bar-chart', component: StackedVerticalBarChartComponent },
         ] 
       }
     ] 

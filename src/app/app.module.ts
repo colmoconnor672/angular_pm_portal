@@ -37,6 +37,8 @@ import { TaskSchedulingComponent } from './pm-portal/task-scheduling/task-schedu
 import { NumberCardChartComponent } from './pm-portal/analysis/number-card-chart/number-card-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
+import { StackedVerticalBarChartComponent } from './pm-portal/analysis/stacked-vertical-bar-chart/stacked-vertical-bar-chart.component';
+import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-item-comment/task-item-comment.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar
     AlertComponent,
     TaskEventItemComponent,
     NumberCardChartComponent,
-    HorizontalBarChartComponent
+    HorizontalBarChartComponent,
+    StackedVerticalBarChartComponent,
+    TaskItemCommentComponent
   ],
   imports: [
     BrowserModule,

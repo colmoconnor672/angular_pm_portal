@@ -23,8 +23,10 @@ export class TaskItemDetailComponent implements OnInit {
   ngOnInit() {
     this.sub1 = this.tasksService.taskSelected.subscribe(
       (selectedTaskId: number) => {
-        console.log('TIDC - tasksService.taskSelected.subscribe(.) - selectedTaskId value = ' + selectedTaskId);
-        this.loadData(selectedTaskId);
+        if(selectedTaskId){
+          console.log('TIDC - tasksService.taskSelected.subscribe(.) - selectedTaskId value = ' + selectedTaskId);
+          this.loadData(selectedTaskId);
+        }
       }
     );
 
@@ -39,7 +41,7 @@ export class TaskItemDetailComponent implements OnInit {
       (params: Params) => {
         this.taskid = params['id'];
         console.log('TIDC - route.params.subscribe(..) route TaskId value = ' + this.taskid);
-        this.loadData(this.taskid);
+        this.tasksService.taskSelected.next(this.taskid);
       }
     )
 
