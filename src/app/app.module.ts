@@ -39,6 +39,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
 import { StackedVerticalBarChartComponent } from './pm-portal/analysis/stacked-vertical-bar-chart/stacked-vertical-bar-chart.component';
 import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-item-comment/task-item-comment.component';
+import { ProjectsComponent } from './pm-portal/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-it
     NumberCardChartComponent,
     HorizontalBarChartComponent,
     StackedVerticalBarChartComponent,
-    TaskItemCommentComponent
+    TaskItemCommentComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

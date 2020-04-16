@@ -72,4 +72,25 @@ export class TasksService {
     return result;
   }
 
+  getSVB_ChartData(orgId:number, projectId:number, startDate:string, endDate:string, extendedSearch: boolean): Observable<any>{
+    console.log('Entered getSVB_ChartData('+orgId+') method');
+    let result: Observable<any> = undefined;
+    let url: string = '';
+    if(projectId == null){
+      url = `${this.baseUrl}AnalysisByOrg/${orgId}`;
+    } else {
+      url = `${this.baseUrl}AnalysisByProject/${orgId}/${projectId}`;
+    }
+    if(startDate != null && endDate != null) {
+      if(projectId == null){
+        url = `${this.baseUrl}AnalysisByDate/${orgId}/${startDate}/${endDate}`;
+      } else {
+        url = `${this.baseUrl}AnalysisByProjectDate/${orgId}/${projectId}/${startDate}/${endDate}`;
+      }
+    }
+    url = url + '/' + !!extendedSearch;
+
+    result = this.http.get(url);
+    return result;
+  }
 }
