@@ -9,7 +9,7 @@ export class Task {
   projectId: number;
   status: TaskStatus;
   priority: TaskPriority;
-  
+  assignedTo: number;
   start_date: string;
 	progress: number;
 	duration: number;

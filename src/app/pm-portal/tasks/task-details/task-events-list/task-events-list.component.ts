@@ -63,7 +63,7 @@ export class TaskEventsListComponent implements OnInit {
   }
 
   onAddEvent(){
-    this.router.navigate(['../../add'], {relativeTo: this.route} );
+    this.router.navigate(['../../fileupload'], {relativeTo: this.route} );
   }
 
   onAddCommentEvent(){

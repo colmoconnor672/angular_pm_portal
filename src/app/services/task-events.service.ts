@@ -17,7 +17,16 @@ export class TaskEventsService {
     return result;
   }
 
-
+  uploadFile(formData: FormData){
+    let url: string = `${this.baseUrl}/Upload`;
+    let result = this.http.post(
+                              url, 
+                              formData, 
+                              // we need this Header to force the Browser 
+                              // to set the type and file boundary correctly
+                              { headers: { "Content-Type": undefined }} );
+    return result;
+  }
 
 
 

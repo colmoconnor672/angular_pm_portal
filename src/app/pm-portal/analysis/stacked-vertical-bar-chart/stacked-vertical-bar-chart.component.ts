@@ -10,7 +10,7 @@ import { OrganisationService } from 'src/app/services/organisation.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { Observable } from 'rxjs';
 import { Project } from 'src/app/models/project';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stacked-vertical-bar-chart',
@@ -72,8 +72,8 @@ export class StackedVerticalBarChartComponent implements OnInit {
       'extendedSearch': new FormControl(null),
       'project': new FormControl(null),
       'filterDates': new FormControl(null),
-      'startDate': new FormControl(null),
-      'endDate': new FormControl(null)
+      'startDate': new FormControl(null, Validators.required),
+      'endDate': new FormControl(null, Validators.required)
     });
 
     this.taskForm.setValue(

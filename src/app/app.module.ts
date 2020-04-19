@@ -40,6 +40,13 @@ import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar
 import { StackedVerticalBarChartComponent } from './pm-portal/analysis/stacked-vertical-bar-chart/stacked-vertical-bar-chart.component';
 import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-item-comment/task-item-comment.component';
 import { ProjectsComponent } from './pm-portal/projects/projects.component';
+import { ProjectsListComponent } from './pm-portal/projects/projects-list/projects-list.component';
+import { ProjectsListItemComponent } from './pm-portal/projects/projects-list/projects-list-item/projects-list-item.component';
+import { ProjectDetailsComponent } from './pm-portal/projects/project-details/project-details.component';
+import { ProjectDetailComponent } from './pm-portal/projects/project-details/project-detail/project-detail.component';
+import { ProjectEditComponent } from './pm-portal/projects/project-details/project-edit/project-edit.component';
+import { ProjectAddComponent } from './pm-portal/projects/project-details/project-add/project-add.component';
+import { TaskItemFileUploadComponent } from './pm-portal/tasks/task-details/task-item-file-upload/task-item-file-upload.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +75,14 @@ import { ProjectsComponent } from './pm-portal/projects/projects.component';
     HorizontalBarChartComponent,
     StackedVerticalBarChartComponent,
     TaskItemCommentComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectsListComponent,
+    ProjectsListItemComponent,
+    ProjectDetailsComponent,
+    ProjectDetailComponent,
+    ProjectEditComponent,
+    ProjectAddComponent,
+    TaskItemFileUploadComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   projectsUrl: string;
   projects: Observable<Project[]>;
   selectedProject: Project;
+  selected:number = null;
 
   constructor(
     private authService: AuthService, 
@@ -75,13 +76,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     console.log('Header: Exiting onLogout() method');
   }
 
-  onProjectSelected(selectedProject: Project) {
-    console.log('Header: In onProjectSelected('+ selectedProject.id +') method');
-    this.selectedProject = selectedProject;
-    // this.projectsService.getProject(id).subscribe(project => {
-    //   this.selectedProject = project;
-    // });
-    this.projectsService.projectSelected.next(selectedProject.id);
+  onProjectSelected(event) {
+    const value = event.target.value;
+    this.selected = +value;
+    console.log('Header: In onProjectSelected('+ this.selected +') method');
+    this.projectsService.getProject(this.selected).subscribe(project => {
+      this.selectedProject = project;
+      this.projectsService.projectSelected.next(project.id);
+    });
   }
 
 }

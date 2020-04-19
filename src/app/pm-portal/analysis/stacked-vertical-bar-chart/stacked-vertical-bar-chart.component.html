@@ -17,15 +17,15 @@
 
       <!-- Extended Search to return all task status counts -->
       <div class="form-group">
-        <label class="small font-weight-bold" for="extendedSearch">Return ALL Task Status counts?</label>
-        <input type="checkbox" id="extendedSearch" name="extendedSearch" formControlName="extendedSearch" 
+        <label class="form-check-label small font-weight-bold" for="extendedSearch">Return ALL Task Status counts?</label>
+        <input class="form-check-input" type="checkbox" id="extendedSearch" name="extendedSearch" formControlName="extendedSearch" 
                 style="margin-left: 10px;" (click)="onToggleExtendedSearch()" (change)="onSubmit()">
       </div>
 
       <!-- Toggle Date Filters -->
       <div class="form-group">
-        <label class="small font-weight-bold" for="filterDates">Filter by Date?</label>
-        <input type="checkbox" id="filterDates" name="filterDates" formControlName="filterDates" 
+        <label class="form-check-label small font-weight-bold" for="filterDates">Filter by Date?</label>
+        <input class="form-check-input" type="checkbox" id="filterDates" name="filterDates" formControlName="filterDates" 
                 style="margin-left: 10px;" (click)="onToggleDateFilter()">
       </div>
 
@@ -33,9 +33,9 @@
       <div class="form-group" *ngIf="taskForm.value.filterDates">
         <label class="small font-weight-bold" for="startDate">Filter from</label>
         <div class="clearfix">
-        <input matInput [matDatepicker]="startDate" [formControlName]="['startDate']" class="form-control float-left form-control-sm" style="width: 85%;" placeholder="Filter from">
+        <input matInput [matDatepicker]="startDate" [formControlName]="['startDate']" class="form-control float-left form-control-sm" style="width: 85%;" placeholder="Filter from" (focus)="startDate.open()">
         <mat-datepicker-toggle matSuffix [for]="startDate" class="float-right"></mat-datepicker-toggle>
-        <mat-datepicker #startDate startView="month" ></mat-datepicker>
+        <mat-datepicker #startDate startView="month"></mat-datepicker>
         </div>
       </div>
 
@@ -43,13 +43,13 @@
       <div class="form-group" *ngIf="taskForm.value.filterDates">
         <label class="small font-weight-bold" for="endDate">Filter to</label>
         <div class="clearfix">
-        <input matInput [matDatepicker]="endDate" [formControlName]="['endDate']" class="form-control float-left form-control-sm" style="width: 85%;" placeholder="Filter to">
+        <input matInput [matDatepicker]="endDate" [formControlName]="['endDate']" class="form-control float-left form-control-sm" style="width: 85%;" placeholder="Filter to" (focus)="endDate.open()">
         <mat-datepicker-toggle matSuffix [for]="endDate" class="float-right"></mat-datepicker-toggle>
         <mat-datepicker #endDate startView="month" ></mat-datepicker>
         </div>
       </div>
 
-      <button class="btn btn-primary btn-sm" type="submit" 
+      <button class="btn btn-primary btn-sm" type="submit" [disabled]="!taskForm.get('startDate').valid || !taskForm.get('endDate').valid"
         *ngIf="taskForm.value.filterDates">Apply Date Filters
       </button>
 

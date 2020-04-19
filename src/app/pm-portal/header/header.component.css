@@ -3,6 +3,11 @@
     color: white;
 }
 
+.sml-black-text {
+    font-size:smaller; 
+    color: black;
+}
+
 .centered-full-width {
     width: 100%; 
     text-align: center;

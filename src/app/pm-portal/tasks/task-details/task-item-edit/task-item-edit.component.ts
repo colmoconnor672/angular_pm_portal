@@ -98,13 +98,17 @@ export class TaskItemEditComponent implements OnInit {
     this.sub1 = this.tasksService.taskSelected.subscribe(
       (selectedTaskId: number) => {
         console.log('selectedTaskId value = ' + selectedTaskId);
-        this.loadData(selectedTaskId, false);
+        this.taskid = selectedTaskId;
+        //this.loadData(selectedTaskId, false);
       }
     );
 
     this.route.params.subscribe(
       (params: Params) => {
-        this.taskid = params['id'];
+        let index: number = +params['id'];
+        if(index) {
+          this.taskid = index;
+        }
         let mode = this.route.snapshot.queryParams['addMode'];
         this.isAddMode = (mode === 'true') ? true : false;
         this.loadData(this.taskid, this.isAddMode);
@@ -218,6 +222,14 @@ export class TaskItemEditComponent implements OnInit {
       );
     }
 
+  }
+
+  onCancel(){
+    if(this.isAddMode) {
+      this.router.navigate(['../detail', this.taskid], {relativeTo: this.route} );
+    } else {
+      this.router.navigate(['../../detail', this.taskid], {relativeTo: this.route} );
+    }
   }
 
   ngOnDestroy(){

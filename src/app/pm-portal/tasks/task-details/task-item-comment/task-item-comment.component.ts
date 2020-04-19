@@ -132,4 +132,13 @@ export class TaskItemCommentComponent implements OnInit, OnDestroy {
     }
   }
 
+  onCancel(){
+    if(this.eventID){
+        // i.e. NOTE: navigation - current path is 'comment/edit/:id'
+        this.router.navigate(['../../../detail', this.selectedTaskId], {relativeTo: this.route} );
+    } else {
+        // i.e. NOTE: navigation - current path is 'comment/add'
+        this.router.navigate(['../../detail', this.selectedTaskId], {relativeTo: this.route} );
+    }
+  }
 }

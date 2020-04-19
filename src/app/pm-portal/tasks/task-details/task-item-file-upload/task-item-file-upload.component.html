@@ -1,0 +1,38 @@
+<div class="pmp-compact fit-half-panel-width list-group-item">
+    <div class="row">
+        <div class="col-md-12">
+
+            <form class="pmp-compact" [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+
+                <!-- Browse-File-Selection control -->
+                <div class="form-group">
+                    <label class="small font-weight-bold" for="image">Select a file to upload</label>
+                    <br>
+                    <input type="file" 
+                        id="selectedFile" name="selectedFile" 
+                        formControlName="selectedFile" 
+                        class="form-control form-control-sm" 
+                        style="height: 40px;"
+                        (change)="onFileSelected($event)" />
+                </div>
+
+                <!-- Comment control -->
+                <div class="form-group">
+                    <label class="small font-weight-bold" for="comment">Comment</label>
+                    <textarea 
+                        id="comment" 
+                        name="comment" 
+                        formControlName="comment" 
+                        class="form-control form-control-sm" 
+                        placeholder="Enter a comment for this task up to 10,000 characters in length">
+                    </textarea>
+                </div>
+                <div class="btn-group-sm">
+                    <button class="btn btn-primary btn-sm" type="submit" [disabled]="!uploadForm.valid">Submit</button>
+                    <button class="btn btn-warning btn-sm"  style="margin-left: 5px;" (click)="onCancel()">Cancel</button>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+</div>

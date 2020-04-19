@@ -16,11 +16,14 @@ import { NumberCardChartComponent } from './pm-portal/analysis/number-card-chart
 import { HorizontalBarChartComponent } from './pm-portal/analysis/horizontal-bar-chart/horizontal-bar-chart.component';
 import { StackedVerticalBarChartComponent } from './pm-portal/analysis/stacked-vertical-bar-chart/stacked-vertical-bar-chart.component';
 import { TaskItemCommentComponent } from './pm-portal/tasks/task-details/task-item-comment/task-item-comment.component';
+import { ProjectsComponent } from './pm-portal/projects/projects.component';
+import { TaskItemFileUploadComponent } from './pm-portal/tasks/task-details/task-item-file-upload/task-item-file-upload.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'projects', component: PmPortalComponent, 
     children: [
+      { path: 'projects', component: ProjectsComponent },
       { path: 'tasks', component: TasksComponent, 
         children : [
           { path: 'detail/:id', component: TaskItemDetailComponent },
@@ -28,13 +31,12 @@ const routes: Routes = [
           { path: 'edit/:id', component: TaskItemEditComponent },
           { path: 'comment/add', component: TaskItemCommentComponent },
           { path: 'comment/edit/:id', component: TaskItemCommentComponent },
-
+          { path: 'fileupload', component: TaskItemFileUploadComponent },
         ]
       },
       { path: 'task-schedule', component: TaskSchedulingComponent },
       { path: 'users', component: UsersComponent },
       { path: 'chats', component: ChatsComponent },
-      { path: 'mentions', component: MentionsComponent },
       { path: 'analysis', component: AnalysisComponent,
         children : [
           { path: 'number-card-chart', component: NumberCardChartComponent },
