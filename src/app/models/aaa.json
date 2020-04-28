@@ -1,41 +1,10 @@
-[
-    {
-        "name": "Project A - Add Bootstrap and NodeJS",
-        "series": [
-            {
-                "name": "Closed",
-                "value": 0
-            },
-            {
-                "name": "Unclosed",
-                "value": 5
-            }
-        ]
-    },
-    {
-        "name": "Project B - Testing a much longer project name string  - Testing a much longer project name string  - Testing a much longer project name string  - Testing a much longer project name string",
-        "series": [
-            {
-                "name": "Closed",
-                "value": 1
-            },
-            {
-                "name": "Unclosed",
-                "value": 9
-            }
-        ]
-    },
-    {
-        "name": "Project C",
-        "series": [
-            {
-                "name": "Closed",
-                "value": 2
-            },
-            {
-                "name": "Unclosed",
-                "value": 4
-            }
-        ]
-    }
-]
+{
+    "expiresIn": "3600",
+    "roles": "ROLE_DEV",
+    "name": "Developer Dave",
+    "id": "6",
+    "email": "dev@test.com",
+    "orgId": "1",
+    "authorities": "ROLE_USER",
+    "token": "rNQB+N4ov4rKimzY9WzJXRfEDWcOpv/xIze15aPcstc="
+}

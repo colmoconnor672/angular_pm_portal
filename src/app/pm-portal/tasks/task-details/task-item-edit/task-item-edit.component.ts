@@ -204,8 +204,7 @@ export class TaskItemEditComponent implements OnInit {
           console.log('TIEC - Added new Task with id ' + task.id);
           console.log('TIEC - last Route = ' + this.route.toString() );
           console.log('TIEC - last Route.queryParams = ' + this.route.queryParams );
-
-          this.router.navigate(['projects/tasks/detail', this.taskid]);
+          this.router.navigate(['../detail', this.taskid], {relativeTo: this.route} );
         }
       );
     } 
@@ -225,6 +224,9 @@ export class TaskItemEditComponent implements OnInit {
   }
 
   onCancel(){
+    if(!this.taskid){
+      this.router.navigate(['../'], {relativeTo: this.route} );
+    }
     if(this.isAddMode) {
       this.router.navigate(['../detail', this.taskid], {relativeTo: this.route} );
     } else {

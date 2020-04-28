@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TaskEventsService } from 'src/app/services/task-events.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { TaskEvent } from 'src/app/models/taskEvent';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { TaskEventsService } from 'src/app/services/task-events.service';
 import { TasksService } from 'src/app/services/tasks.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/user';
+import { TaskEvent } from 'src/app/models/taskEvent';
 
 @Component({
   selector: 'app-task-item-comment',

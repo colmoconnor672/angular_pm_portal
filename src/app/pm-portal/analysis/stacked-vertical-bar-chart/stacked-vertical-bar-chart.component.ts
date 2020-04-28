@@ -64,7 +64,9 @@ export class StackedVerticalBarChartComponent implements OnInit {
 
     this.orgService.organisationSelected.subscribe(orgId => {
       this.orgId = orgId;
-      this.projects = this.projectsService.getProjectListForOrganisation(this.orgId);
+      if(this.orgId != null){
+        this.projects = this.projectsService.getProjectListForOrganisation(this.orgId);
+      }
     });
 
     // initialise the reactive form elements here

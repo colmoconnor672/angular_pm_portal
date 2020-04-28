@@ -83,29 +83,35 @@ export class TaskItemFileUploadComponent implements OnInit, OnDestroy {
     taskEvent.event_date = uploadDate;
     taskEvent.taskId = this.selectedTaskId;
     taskEvent.eventUser = {
-      id: +this.currentUser.id,
-      name: null,
-      email: null,
-      orgId: null,
-      roles: null
+      id: +this.currentUser.id, name: null, email: null, orgId: null, roles: null
     };
 
-    // setup a new FormData instance and add the file and the matching new TaskEvent
+    // setup a new FormData object and append (1) the file and (2) the new TaskEvent
     let formData = new FormData();
     formData.append('file', this.fileData);
     formData.append('taskEvent', new Blob([JSON.stringify(taskEvent)], {type: "application/json"}) );
 
     // use the taskEventService to upload the file and corresponding data
-    this.taskEventService.uploadFile(formData).subscribe( (data: any) => {
-      console.log('Successfully uploaded file!');
-      // leave this component and go back to Task Detail screen - current path is 'fileupload'
-      this.router.navigate(['../detail', this.selectedTaskId], {relativeTo: this.route} );
-    });
+    this.taskEventService.uploadFile(formData).subscribe( 
+      (data: any) => {
+        console.log('Successfully uploaded file!');
+        // return to Task Detail screen - current path is 'fileupload'
+        this.router.navigate(['../detail', this.selectedTaskId], {relativeTo: this.route} );
+      },
+      error => {
+        let msg = error.message;
+        if(error.error){
+          msg = msg + ' - ' + error.error.message;
+        }
+        console.log('An Error occured - ' + msg);
+        alert('An Error occured during the file upload. The error message is: ' + msg);
+      }
+    );
 
   }
 
   onCancel(){
-      // leave this component and go back to Task Detail screen - current path is 'fileupload'
+      // return to Task Detail screen - current path is 'fileupload'
       this.router.navigate(['../detail', this.selectedTaskId], {relativeTo: this.route} );
   }
 

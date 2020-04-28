@@ -1,0 +1,32 @@
+<div class="pmp-compact fit-half-panel-width list-group-item" *ngIf="currentUser">
+
+    <div class="row" >
+        <div class="col-md-12 clearfix">
+            <button class="btn btn-warning float-right btn-sm" (click)="onAddUser()">Add User</button>
+            <p class="small-pad-left float-right"></p>
+            <button class="btn btn-info float-right btn-sm" (click)="onEditUser()">Edit User</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" >
+        <div class="col-md-12">
+            <h5>{{currentUser.name}}</h5>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-md-12">
+            <h5>{{currentUser.email}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span class="bold-title float-left">Roles</span>
+            <p class="float-left small-pad-left">{{getRolesString()}}</p>
+        </div>
+    </div>
+
+</div>

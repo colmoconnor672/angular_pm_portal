@@ -8,7 +8,7 @@
         <div class="col-md-2">
             <form class="form-inline">
                 <div class="form-group">
-                    <button *ngIf="!isConnected" (click)="connect()" class="btn btn-success" type="submit">Connect</button>
+                    <button *ngIf="!isConnected" (click)="connect()" class="btn btn-success bt-sml" type="submit">Connect</button>
                     <button *ngIf="isConnected" (click)="disconnect()" class="btn btn-danger" type="submit">Disconnect
                     </button>
                 </div>
@@ -20,9 +20,14 @@
                     <label for="name">Message</label>
                     <input type="text" [(ngModel)]="message" class="form-control" name="message"> <br>
                 </div>
-                <button *ngIf="isConnected" (click)="sendMessage()" class="btn btn-success" type="submit" [disabled]="!isConnected">Send</button>
+                <button *ngIf="isConnected" (click)="sendMessage()" class="btn btn-success bt-sml" type="submit" [disabled]="!isConnected">Send</button>
             </form>
         </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
         <ul>
             <li *ngFor="let message of messages">{{message}}</li>
         </ul>

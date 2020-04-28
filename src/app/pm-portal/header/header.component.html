@@ -6,27 +6,27 @@
       <ul class="navbar-nav">
 
       <li class="nav-item">
-        <a routerLink="/projects/projects" class="nav-link" routerLinkActive="active">Projects</a>
+        <a routerLink="/org/projects" class="nav-link" routerLinkActive="active">Projects</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/projects/tasks" class="nav-link" routerLinkActive="active">Tasks</a>
+        <a routerLink="/org/tasks" class="nav-link" routerLinkActive="active">Tasks</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/projects/task-schedule" class="nav-link" routerLinkActive="active">Scheduling</a>
+        <a routerLink="/org/task-schedule" class="nav-link" routerLinkActive="active">Scheduling</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/projects/users" class="nav-link" routerLinkActive="active">Users</a>
+        <a routerLink="/org/users" class="nav-link" routerLinkActive="active">Users</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/projects/chats" class="nav-link" routerLinkActive="active">Chats</a>
+        <a routerLink="/org/chats" class="nav-link" routerLinkActive="active">Chats</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/projects/analysis" class="nav-link" routerLinkActive="active">Analysis</a>
+        <a routerLink="/org/analysis" class="nav-link" routerLinkActive="active">Analysis</a>
       </li>
 
     </ul>
@@ -37,12 +37,16 @@
   <div class="col-md-3">
     <ul class="navbar-nav" style="width: 100%;">
       <li class="centered-full-width" *ngIf="isAuthenticated">
-          <select id="selected" name="selected" [(ngModel)]="selected" #mySelect class="form-control form-control-sm sml-black-text" (change)="onProjectSelected($event)">
+
+        <form class="pmp-compact" [formGroup]="headerForm" (ngSubmit)="onSubmit()">
+          <select id="selectedProject" name="selectedProject" [formControlName]="['selectedProject']" #projectCB class="form-control form-control-sm" (change)="onProjectSelected($event)" placeholder="No Project Selected!">
             <option [ngValue]="null" [disabled]="true">No Project Selected!</option>
-            <option *ngFor="let project of projects | async" [ngValue]="project.id" value="{{project.id}}"  selected="selectedProject.id === project.id" >
+            <option *ngFor="let project of projects" [ngValue]="project.id" value="{{project.id}}" [selected]="isProjectSelected(project.id)" >  <!--   -->
               {{ project.name  | slice:0:75 }}<span *ngIf="project.name.length > 75"> ...</span>
             </option>
           </select>
+        </form>
+
       </li>
     </ul>
   </div>

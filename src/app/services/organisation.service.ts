@@ -7,7 +7,7 @@ export class OrganisationService {
 
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/organisations';
 
-  organisationSelected = new BehaviorSubject<number>(null);
+  public organisationSelected = new BehaviorSubject<number>(null);
 
   constructor(private http: HttpClient) { }
 

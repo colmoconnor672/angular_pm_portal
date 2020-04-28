@@ -1,9 +1,22 @@
 
+<!-- The Header Component -->
 <app-header></app-header>
 
 <div class="container">
     <br>
-    <!-- <h6 style="text-align: center;">{{title}}</h6> -->
+    <!-- 
+        The main router-outlet below can be populated by any of it's route children ..
+        1. analysis component,
+        2. chats component,
+        3. projects component,
+        4. tasks component,
+        5. scheduling component, or
+        6. users component
+
+        In terms of Routing, each of the components above
+        are defined as route children of this pm-portal component
+        See the src/app/app-routing-module.ts file in this project
+    -->
   
     <router-outlet></router-outlet>
 

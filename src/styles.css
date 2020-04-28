@@ -1,6 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.fit-panel-width {
+  width: 90vw;
+}
+
+.fit-half-panel-width {
+  width: 47vw;
+}
+
+.redbox{
+  border: solid 1px red;
+}
+
+.bluebox{
+  border: solid 1px blue;
+}
+
+.greybox {
+  border: solid 1px lightgray;
+}
+
+.pmp-compact {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* default is 1rem or 16px */
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+  
+/* Increase all font sizes on mobile */
+@media (max-width: 767px) { 
+  .pmp-compact {
+      /* default is 1rem or 16px */
+      font-size: 14px;
+  }
+  
+  .fit-half-panel-width {
+      /* default is 1rem or 16px */
+      width: 85vw;
+  }
+}
+
+.small-image {
+  height: 20px; 
+  width: 20px;
+}
+
+.small-pad-left {
+  padding-left: 1mm;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -9,21 +64,4 @@
   background-color: blue;
   text-align: center;
   color: white;
-}
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-.redbox {
-  border: solid 1px red;
-}
-
-.bluebox {
-  border: solid 1px blue;
-}
-
-.greybox {
-  border: solid 1px lightgray;
 }

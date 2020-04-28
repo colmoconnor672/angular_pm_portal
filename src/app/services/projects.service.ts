@@ -6,7 +6,15 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 export class ProjectsService {
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/projects';
 
+  // this is used to signal when an overall project is selected for the UI
+  // this is used by the Header and the subscribing TasksList components
   projectSelected = new BehaviorSubject<number>(null);
+
+  // this is used when an item is selected in the project list on the Projects tab.
+  // this is ONLY used by the project child routes
+  projectItemChosen = new BehaviorSubject<number>(null);
+
+  projectItemUpdated = new Subject<number>();
 
   constructor(private http: HttpClient) { }
 

@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Task } from 'src/app/models/task';
 import { TasksService } from 'src/app/services/tasks.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-task-item-detail',
   templateUrl: './task-item-detail.component.html',
   styleUrls: ['./task-item-detail.component.css']
 })
-export class TaskItemDetailComponent implements OnInit {
+export class TaskItemDetailComponent implements OnInit, OnDestroy {
   private taskid: number;
   currentTask: Observable<Task>;
+  private assignedToUser: User;
   private sub1: Subscription;
   private sub2: Subscription;
 
   constructor(
+    private userService: UsersService,
     private tasksService: TasksService, 
     private router: Router, 
     private route: ActivatedRoute) { }
@@ -52,9 +56,15 @@ export class TaskItemDetailComponent implements OnInit {
       task => {
         console.log('task = ' + task);
         this.currentTask = task;
+        if(task && task.assignedTo){
+          this.userService.getUser(task.assignedTo).subscribe(user =>{
+            this.assignedToUser = user;
+          });
+          }
       }
     );
   }
+
 
   onEditTask(){
     const id: number = + this.route.snapshot.params['id'];
@@ -63,6 +73,11 @@ export class TaskItemDetailComponent implements OnInit {
 
   onAddTask(){
     this.router.navigate(['../../add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
+  }
+
+  onAssignTask(){
+    const id: number = + this.route.snapshot.params['id'];
+    this.router.navigate(['../../assign', id], {relativeTo: this.route} );
   }
 
   ngOnDestroy(){

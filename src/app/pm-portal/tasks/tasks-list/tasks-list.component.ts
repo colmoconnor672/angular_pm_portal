@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Task } from 'src/app/models/task';
 import { TasksService } from 'src/app/services/tasks.service';
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.css']
 })
-export class TasksListComponent implements OnInit {
+export class TasksListComponent implements OnInit, OnDestroy {
 
   tasks: Observable<Task[]>;
   projectId: number;

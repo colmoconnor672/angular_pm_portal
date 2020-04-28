@@ -1,1 +1,8 @@
-<p>projects-list works!</p>
+<div class="row">
+    <div class="col-xs-12 scroll ">
+        <app-projects-list-item 
+            *ngFor="let currentProject of projects | async" 
+            [projectItem]="currentProject">
+        </app-projects-list-item>
+    </div>
+</div>

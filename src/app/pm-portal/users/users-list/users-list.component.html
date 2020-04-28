@@ -1,0 +1,12 @@
+<div class="row">
+
+    <div class="col-xs-12 scroll ">
+
+        <app-users-list-item 
+            *ngFor="let currentUser of users | async" 
+            [userItem]="currentUser">
+        </app-users-list-item>
+        
+    </div>
+
+</div>

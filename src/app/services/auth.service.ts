@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Role } from '../models/role';
 
 export interface AuthResponseData {
   id: string;
@@ -12,7 +13,7 @@ export interface AuthResponseData {
   orgId: string;
   projectId: number;
   authorities: string;
-  roles: string;
+  roles: Role[];
   token: string;
   expiresIn:	string;
 }
@@ -27,12 +28,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  registerUser(
-    email: string, 
-    password: string, 
-    orgName: string, 
-    orgEmail: string, 
-    orgPhone: string) 
+  registerUser(email: string, password: string, orgName: string, orgEmail: string, orgPhone: string) 
   {
     const registerOrgUserUrl = this.baseUrl + 'registerOrgUser';
     return this.http.post<AuthResponseData>(
@@ -44,7 +40,11 @@ export class AuthService {
         email: email, 
         password: password
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError), 
+      tap(resData => {
+        console.log(resData);
+      })
+    );
   }
 
   login(email: string, password: string) {
@@ -63,6 +63,7 @@ export class AuthService {
           resData.email, 
           resData.id, 
           resData.name,
+          +resData.orgId,
           resData.authorities,
           resData.roles,
           resData.token, 
@@ -76,15 +77,16 @@ export class AuthService {
       email: string,
       id: string,
       name: string,
+      orgId: number,
       authorities: string,
-      roles: string,
+      roles: Role[],
       _token: string,
       _tokenExpirationDate: string
     } = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
       return;
     }
-    const loadedUser = new User(userData.email, userData.id, userData.name, userData.authorities, userData.roles, userData._token, new Date(userData._tokenExpirationDate));
+    const loadedUser = new User(userData.email, userData.id, userData.name, userData.orgId, userData.authorities, userData.roles, null, userData._token, new Date(userData._tokenExpirationDate));
     
     if(loadedUser.token){
       this.user.next(loadedUser);
@@ -113,11 +115,11 @@ export class AuthService {
 
 
 
-  private handleAuthentication(email: string, userId: string, name: string, authorities: string, roles: string, token: string, expiresIn: number) {
+  private handleAuthentication(email: string, userId: string, name: string, orgId: number, authorities: string, roles: Role[], token: string, expiresIn: number) {
     const expirationDate = new Date(
       new Date().getTime() + (expiresIn * 1000) 
     );
-    const user = new User(email, userId, name, authorities, roles, token, expirationDate)
+    const user = new User(email, userId, name, orgId, authorities, roles, null, token, expirationDate)
     this.user.next(user);
 
     this.autoLogout(expiresIn * 1000);

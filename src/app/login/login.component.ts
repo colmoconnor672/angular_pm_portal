@@ -60,8 +60,7 @@ export class LoginComponent implements OnInit {
         console.log(resData);
         this.isLoading = false;
         if(this.isLoginMode){
-          //this.router.navigate(['/projects/' + resData.orgId]);
-          this.router.navigate(['/projects/tasks/']);
+          this.router.navigate(['/org/tasks/']);
           this.organisationService.organisationSelected.next( +resData.orgId );
         } else {
           this.onSwitchMode();

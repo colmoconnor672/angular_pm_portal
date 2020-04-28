@@ -1,26 +1,26 @@
 export var single = [
     {
-      "name": "Germany",
-      "value": 8940000
+      "name": "Preparing",
+      "value": 4
     },
     {
-      "name": "USA",
-      "value": 5000000
+      "name": "On-hold",
+      "value": 2
     },
     {
-      "name": "France",
-      "value": 7200000
+      "name": "In Progress",
+      "value": 17
     },
     {
-      "name": "UK",
-      "value": 5200000
+      "name": "Fixed",
+      "value": 34
     },
     {
-      "name": "Italy",
-      "value": 7700000
+      "name": "Verified",
+      "value": 17
     },
     {
-      "name": "Spain",
-      "value": 4300000
+      "name": "Completed",
+      "value": 6
     }
   ];

@@ -1,0 +1,16 @@
+
+<a style="cursor: pointer" 
+    class="list-group-item clearfix" 
+    routerLinkActive="active"
+    [routerLink]="['detail', userItem.id]">
+
+    
+    <span class="float-right">
+        <p class="list-group-item-text">{{getRolesString()}}</p>
+    </span>
+   
+
+    <div class="float-left">
+        <h6 class="list-group-item-heading">{{userItem.name}}</h6>
+    </div>
+</a>

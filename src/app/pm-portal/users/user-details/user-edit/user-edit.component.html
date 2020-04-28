@@ -1,0 +1,55 @@
+<div class="row pmp-compact fit-half-panel-width list-group-item">
+    <div class="col-md-12">
+  
+      <form class="pmp-compact" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  
+        <!-- Name -->
+        <div class="form-group">
+          <label class="small font-weight-bold" for="name">Name</label>
+          <input type="text" id="name" [formControlName]="['name']" 
+            class="form-control form-control-sm" placeholder="Enter a name for this User">
+          <span class="help-block alert-warning" 
+            *ngIf="!userForm.get('name').valid && userForm.get('name').touched" >
+            Please enter a valid name text!</span>
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label class="small font-weight-bold" for="email">Email</label>
+          <input type="email" id="email" [formControlName]="['email']" 
+            class="form-control form-control-sm" placeholder="Enter a email of this user">
+          <span *ngIf="!userForm.get('email').valid && userForm.get('email').touched"
+            class="help-block alert-warning">Please enter a valid email!</span>
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group" *ngIf="!!isAddMode">
+          <label class="small font-weight-bold" for="password">Password</label>
+          <input type="password" id="password" [formControlName]="['password']" 
+            class="form-control form-control-sm" placeholder="Enter a password of this user">
+          <span *ngIf="!userForm.get('password').valid && userForm.get('password').touched"
+            class="help-block alert-warning">Please enter a valid password!</span>
+        </div>
+
+        <!-- Roles -->
+        <div class="form-group">
+          <label class="small font-weight-bold" for="roles">Roles</label>
+          <select name="roles" multiple formControlName="roles" class="form-control form-control-sm" style="height: 170px;">
+            <option [ngValue]="null" [disabled]="true">Choose Roles (Multiple)</option>
+            <option *ngFor="let role of allRoles" [ngValue]="role" [selected]="isRoleSelected(role.id)">
+              {{ role.roleDescription }}
+            </option>
+          </select>
+          <span *ngIf="!userForm.get('roles').valid && userForm.get('roles').touched"
+              class="help-block alert-warning">Please enter a valid Role!</span>
+        </div>
+  
+        <!-- Submit/Cancel Buttons -->
+        <div class="btn-group-sm">
+          <button class="btn btn-primary btn-sm" type="submit" [disabled]="!userForm.valid">Submit</button>
+          <button class="btn btn-warning btn-sm"  style="margin-left: 5px;" (click)="onCancel()">Cancel</button>
+        </div>
+  
+      </form>
+    </div>
+  </div>

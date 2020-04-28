@@ -15,7 +15,7 @@ import { TasksListComponent } from './pm-portal/tasks/tasks-list/tasks-list.comp
 import { TaskDetailsComponent } from './pm-portal/tasks/task-details/task-details.component';
 import { TaskItemDetailComponent } from './pm-portal/tasks/task-details/task-item-detail/task-item-detail.component';
 import { TaskItemEditComponent } from './pm-portal/tasks/task-details/task-item-edit/task-item-edit.component';
-import { TaskItemAddComponent } from './pm-portal/tasks/task-details/task-item-add/task-item-add.component';
+import { TaskItemDefaultComponent } from './pm-portal/tasks/task-details/task-item-default/task-item-default.component';
 import { TaskEventsListComponent } from './pm-portal/tasks/task-details/task-events-list/task-events-list.component';
 import { OrganisationService } from './services/organisation.service';
 import { TasksService } from './services/tasks.service';
@@ -45,8 +45,15 @@ import { ProjectsListItemComponent } from './pm-portal/projects/projects-list/pr
 import { ProjectDetailsComponent } from './pm-portal/projects/project-details/project-details.component';
 import { ProjectDetailComponent } from './pm-portal/projects/project-details/project-detail/project-detail.component';
 import { ProjectEditComponent } from './pm-portal/projects/project-details/project-edit/project-edit.component';
-import { ProjectAddComponent } from './pm-portal/projects/project-details/project-add/project-add.component';
+import { ProjectDefaultComponent } from './pm-portal/projects/project-details/project-default/project-default.component';
 import { TaskItemFileUploadComponent } from './pm-portal/tasks/task-details/task-item-file-upload/task-item-file-upload.component';
+import { TaskItemAssignComponent } from './pm-portal/tasks/task-details/task-item-assign/task-item-assign.component';
+import { UsersListComponent } from './pm-portal/users/users-list/users-list.component';
+import { UsersListItemComponent } from './pm-portal/users/users-list/users-list-item/users-list-item.component';
+import { UserDetailsComponent } from './pm-portal/users/user-details/user-details.component';
+import { UserDetailComponent } from './pm-portal/users/user-details/user-detail/user-detail.component';
+import { UserEditComponent } from './pm-portal/users/user-details/user-edit/user-edit.component';
+import { UserDefaultComponent } from './pm-portal/users/user-details/user-default/user-default.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +71,7 @@ import { TaskItemFileUploadComponent } from './pm-portal/tasks/task-details/task
     TaskDetailsComponent,
     TaskItemDetailComponent,
     TaskItemEditComponent,
-    TaskItemAddComponent,
+    TaskItemDefaultComponent,
     TaskEventsListComponent,
     PageNotFoundComponent,
     TasksListItemComponent,
@@ -81,8 +88,15 @@ import { TaskItemFileUploadComponent } from './pm-portal/tasks/task-details/task
     ProjectDetailsComponent,
     ProjectDetailComponent,
     ProjectEditComponent,
-    ProjectAddComponent,
-    TaskItemFileUploadComponent
+    ProjectDefaultComponent,
+    TaskItemFileUploadComponent,
+    TaskItemAssignComponent,
+    UsersListComponent,
+    UsersListItemComponent,
+    UserDetailsComponent,
+    UserDetailComponent,
+    UserEditComponent,
+    UserDefaultComponent
   ],
   imports: [
     BrowserModule,

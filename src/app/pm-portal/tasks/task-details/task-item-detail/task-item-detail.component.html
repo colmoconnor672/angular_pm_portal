@@ -1,19 +1,15 @@
-<div *ngIf="!currentTask">
-    <div class="row" >
-        <div class="col-md-12">
-            <p>Please select a Task to view the content</p>
-        </div>
-    </div>
-</div>
-
 <div class="pmp-compact fit-half-panel-width list-group-item" *ngIf="currentTask">
     <div class="row" >
         <div class="col-md-12 clearfix">
-            <button class="btn btn-info float-right btn-sm" (click)="onAddTask()">Add Task</button>
+            <button class="btn btn-warning float-right btn-sm" (click)="onAddTask()">Add Task</button>
             <p class="small-pad-left float-right"></p>
-            <button class="btn btn-warning float-right btn-sm" (click)="onEditTask()">Edit Task</button>
+            <button class="btn btn-info float-right btn-sm" (click)="onEditTask()">Edit Task</button>
+            <p class="small-pad-left float-right"></p>
+            <button class="btn btn-success float-right btn-sm" (click)="onAssignTask()">Assign Task</button>
         </div>
     </div>
+
+    <hr>
 
     <div class="row" >
         <div class="col-md-12">
@@ -21,15 +17,24 @@
         </div>
     </div>
 
+    
+
     <div class="row">
         <div class="col-md-12">
             <p>{{currentTask.description}}</p>
         </div>
     </div>
 
+    <div class="row" *ngIf="assignedToUser">
+        <div class="col-md-12">
+            <span class="bold-title float-left">Assigned to</span><p class="float-left small-pad-left">{{assignedToUser.name}}</p>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-md-12">
-            <span class="bold-title float-left">Status </span> <p class="float-left small-pad-left">{{currentTask.status.description}}</p>
+            <span class="bold-title float-left">Status</span><p class="float-left small-pad-left">{{currentTask.status.description}}</p>
         </div>
     </div>
 
@@ -38,6 +43,8 @@
             <span class="bold-title float-left">Priority</span><p class="float-left small-pad-left">{{currentTask.priority.level}}</p>
         </div>
     </div>
+
+
 
     <app-task-events-list [taskItem]="currentTask"></app-task-events-list>
 

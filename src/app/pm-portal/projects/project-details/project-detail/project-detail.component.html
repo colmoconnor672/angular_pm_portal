@@ -1,1 +1,25 @@
-<p>project-detail works!</p>
+<div class="pmp-compact fit-half-panel-width list-group-item" *ngIf="currentProject">
+
+    <div class="row" >
+        <div class="col-md-12 clearfix">
+            <button class="btn btn-warning float-right btn-sm" (click)="onAddProject()">Add Project</button>
+            <p class="small-pad-left float-right"></p>
+            <button class="btn btn-info float-right btn-sm" (click)="onEditProject()">Edit Project</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" >
+        <div class="col-md-12">
+            <h5>{{currentProject.name}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>{{currentProject.description}}</p>
+        </div>
+    </div>
+
+</div>

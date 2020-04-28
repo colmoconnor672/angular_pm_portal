@@ -1,1 +1,16 @@
-<p>projects-list-item works!</p>
+
+<a style="cursor: pointer" 
+    class="list-group-item clearfix" 
+    routerLinkActive="active"
+    [routerLink]="['detail', projectItem.id]">
+
+    <!-- 
+    <span class="float-right">
+        <p class="list-group-item-text">{{projectItem.name}}</p>
+    </span>
+    -->
+    
+    <div class="float-left">
+        <h6 class="list-group-item-heading">{{projectItem.name}}</h6>
+    </div>
+</a>

@@ -18,9 +18,9 @@ export class HorizontalBarChartComponent {
   gradient: boolean = false;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
-  yAxisLabel: string = 'Country';
+  yAxisLabel: string = 'User';
   showYAxisLabel: boolean = true;
-  xAxisLabel: string = 'Population';
+  xAxisLabel: string = 'Number of assigned Tasks';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']

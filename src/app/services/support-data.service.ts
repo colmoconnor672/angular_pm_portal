@@ -10,6 +10,7 @@ import { TaskPriority } from '../models/TaskPriority';
 export class SupportDataService {
 
   private baseUrl = 'http://localhost:8081/pm_portal/api/v1/supportData';
+  private rolesUrl = 'http://localhost:8081/pm_portal/api/v1/roles';
   
   constructor(private http: HttpClient) { }
 
@@ -24,6 +25,12 @@ export class SupportDataService {
     console.log('........... Entered getTaskStatusList() method .................');
     let url: string = this.baseUrl + '/priorityList';
     let result: Observable<any> = this.http.get<any>(url);
+    return result;
+  }
+
+  getUserRolesList(): Observable<any> {
+    console.log('........... Entered getUserRolesList() method .................');
+    let result: Observable<any> = this.http.get<any>(this.rolesUrl);
     return result;
   }
 
