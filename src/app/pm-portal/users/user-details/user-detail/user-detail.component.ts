@@ -77,8 +77,9 @@ export class UserDetailComponent implements OnInit {
   getRolesString(){
     let rolesString = '';
     this.currentUser.roles.forEach( (role:Role, index:number, array:Role[]) => {
-      rolesString = rolesString + role.roleDescription;
+      rolesString = rolesString + role.roleDescription + ', ';
     })
+    rolesString = rolesString.slice(0, rolesString.length-2);
     return rolesString;
   }
 

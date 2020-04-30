@@ -16,8 +16,9 @@ export class TaskDependenciesService {
     return result;
   }
 
-	getPromise(): Promise<TaskDependency[]> {
-		return this.http.get<TaskDependency[]>(this.baseUrl)
+	getTaskDependenciesAsPromise(projectId: number): Promise<TaskDependency[]> {
+    let url = this.baseUrl + 'ForProject/' + projectId;
+		return this.http.get<TaskDependency[]>(url)
       .toPromise()
 			.catch(this.handleError);
 	}

@@ -1,8 +1,14 @@
 <div class="row">
-    <div class="col-xs-12 scroll ">
-        <app-tasks-list-item 
+
+    <div class="col-xs-12" *ngIf="!tasks" style="margin-top: 50px;">
+        <h3>Please select a Project from the Menu Bar to view the associated Tasks here</h3>
+    </div>
+
+    <div class="col-xs-12 scroll" *ngIf="!!tasks">
+        <app-tasks-list-item
             *ngFor="let currentTask of tasks | async" 
             [taskItem]="currentTask">
         </app-tasks-list-item>
     </div>
+
 </div>

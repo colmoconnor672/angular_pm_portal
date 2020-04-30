@@ -40,15 +40,14 @@ export class GanttComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('In ngOnInit() method');
-    //setTimeout(() => {
-      this.sub1 = this.projectsService.projectSelected.subscribe(
-        selectedProject => {
-          console.log('Gantt - Loading data for new Project Selected id ' + selectedProject);
-          this.projectId = selectedProject;
-          this.loadGanntData();
-        }
-      );
-    //}, 100);
+
+    this.sub1 = this.projectsService.projectSelected.subscribe(
+      selectedProject => {
+        console.log('Gantt - Loading data for new Project Selected id ' + selectedProject);
+        this.projectId = selectedProject;
+        this.loadGanntData();
+      }
+    );
   }
 
   loadGanntData() {
@@ -56,7 +55,7 @@ export class GanttComponent implements OnInit, OnDestroy {
       console.log('Unable to render Gannt component - NO PROJECT SELECTED! ' +
                   'Please select a Project to continue.');
       // SHOW A POP-UP TO INFORM USER BEFORE EXITING HERE !!!
-      this.errorMessage = 'Please select a Project to continue.';
+      //this.errorMessage = 'Please select a Project to continue.';
       return;
     }
 
@@ -182,7 +181,9 @@ export class GanttComponent implements OnInit, OnDestroy {
       }
     });
 
-    Promise.all([this.taskService.getPromise(), this.dependenciesService.getPromise()])
+    Promise.all([
+      this.taskService.getProjectTasksAsPromise(this.projectId), 
+      this.dependenciesService.getTaskDependenciesAsPromise(this.projectId)])
       .then(
         ([data, links]) => {
           gantt.parse({ data, links });

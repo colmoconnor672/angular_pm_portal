@@ -33,12 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    const email = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
-    const orgName = this.loginForm.value.orgName;
-    const orgEmail = this.loginForm.value.orgEmail;
-    const orgPhone = this.loginForm.value.orgPhone;
-
+    // ensure validation passed
     if(!this.isLoginMode && !this.loginForm.valid) {
       return;
     }
@@ -46,13 +41,20 @@ export class LoginComponent implements OnInit {
       return;
     } 
 
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+    const orgName = this.loginForm.value.orgName;
+    const orgEmail = this.loginForm.value.orgEmail;
+    const orgPhone = this.loginForm.value.orgPhone;
+    const adminRoleId = 1;
+
     this.isLoading = true;
     let authObs: Observable<AuthResponseData>;
 
     if(this.isLoginMode){
       authObs = this.authService.login(email, password);
     } else {
-      authObs = this.authService.registerUser(email, password, orgName, orgEmail, orgPhone);
+      authObs = this.authService.registerUser(email, password, orgName, orgEmail, orgPhone, adminRoleId);
     }
 
     authObs.subscribe(

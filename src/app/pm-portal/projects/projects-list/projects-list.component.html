@@ -1,8 +1,14 @@
 <div class="row">
-    <div class="col-xs-12 scroll ">
+
+    <div class="col-xs-12" *ngIf="!projects" style="margin-top: 50px;">
+        <h3>Please create a new Project to see a Projects List here</h3>
+    </div>
+
+    <div class="col-xs-12 scroll" *ngIf="!!projects">
         <app-projects-list-item 
             *ngFor="let currentProject of projects | async" 
             [projectItem]="currentProject">
         </app-projects-list-item>
     </div>
+
 </div>

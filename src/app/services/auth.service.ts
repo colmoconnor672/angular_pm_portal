@@ -28,7 +28,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  registerUser(email: string, password: string, orgName: string, orgEmail: string, orgPhone: string) 
+  registerUser(email: string, password: string, orgName: string, orgEmail: string, orgPhone: string, roleId: number) 
   {
     const registerOrgUserUrl = this.baseUrl + 'registerOrgUser';
     return this.http.post<AuthResponseData>(
@@ -38,7 +38,8 @@ export class AuthService {
         orgEmail: orgEmail,
         orgPhone: orgPhone,
         email: email, 
-        password: password
+        password: password,
+        roleId: roleId
       }
     ).pipe(catchError(this.handleError), 
       tap(resData => {

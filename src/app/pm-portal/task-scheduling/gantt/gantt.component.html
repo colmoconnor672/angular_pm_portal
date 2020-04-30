@@ -1,4 +1,8 @@
 
 <app-alert [message]="errorMessage" *ngIf="errorMessage" (close)="onHandleError()"></app-alert>
 
-<div #gantt_here  class='gantt-chart'></div>
+<div class="col-xs-12" *ngIf="!projectId" style="margin-top: 50px;">
+    <h3>Please select a Project from the Menu Bar to view the associated Gantt Chart here</h3>
+</div>
+
+<div #gantt_here  class='gantt-chart' [hidden]="!projectId"></div>

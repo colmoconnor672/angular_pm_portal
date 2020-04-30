@@ -19,10 +19,8 @@ export class TasksService {
     return result;
   }
 
-	getPromise(): Promise<Task[]> {
-		return this.http.get<Task[]>(this.baseUrl)
-      .toPromise()
-			.catch(this.handleError);
+	getProjectTasksAsPromise(projectId: number): Promise<Task[]> {
+    return this.getTaskListForProject(projectId).toPromise();
 	}
 
   handleError(error: any): Promise<any>{
@@ -36,9 +34,10 @@ export class TasksService {
     if (projectId) {
       let url = this.baseUrl + 'ForProject'
       result = this.http.get(`${url}/${projectId}`);
-    } else {
-      result = this.getTaskList();
-    }
+    } 
+    // else {
+    //   result = this.getTaskList();
+    // }
     return result;
   }
 

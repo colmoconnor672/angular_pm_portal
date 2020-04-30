@@ -50,7 +50,7 @@ export class StackedVerticalBarChartComponent implements OnInit {
   //#ff0000
 
   colorScheme = {
-    domain: ['#5AA454', '#ff6347', '#ffd700', '#b8860b', '#AAAAAA', '#008b8b']
+    domain: ['#ff6347', '#5AA454', '#ffd700', '#b8860b', '#AAAAAA', '#008b8b']
   };
 
   constructor(
