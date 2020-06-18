@@ -2,6 +2,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "autospy": ["./src/auto-spy"] // This mapping is relative to "baseUrl"
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

@@ -6,7 +6,7 @@
 
     <div class="col-xs-12 scroll" *ngIf="!!projects">
         <app-projects-list-item 
-            *ngFor="let currentProject of projects | async" 
+            *ngFor="let currentProject of projects" 
             [projectItem]="currentProject">
         </app-projects-list-item>
     </div>

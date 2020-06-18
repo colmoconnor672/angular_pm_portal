@@ -6,7 +6,7 @@
 
     <div class="col-xs-12 scroll" *ngIf="!!tasks">
         <app-tasks-list-item
-            *ngFor="let currentTask of tasks | async" 
+            *ngFor="let currentTask of tasks" 
             [taskItem]="currentTask">
         </app-tasks-list-item>
     </div>

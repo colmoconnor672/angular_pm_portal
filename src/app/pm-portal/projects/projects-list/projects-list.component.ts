@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit, OnDestroy {
-  projects: Observable<Project[]>;
+  projects: Project[];
   orgId: number;
   isAuthenticated = false;
   sub1: Subscription;
@@ -59,7 +59,13 @@ export class ProjectsListComponent implements OnInit, OnDestroy {
     reloadData() {
       console.log('PLC - In reloadData() method');
       if(this.orgId != null){
-        this.projects = this.projectsService.getProjectListForOrganisation(this.orgId);
+        this.projectsService.getProjectListForOrganisation(this.orgId).subscribe(
+          (list: Project[]) => {
+            if(list.length > 0) {
+              this.projects = list;
+            }
+          }
+        );
       }
     }
     

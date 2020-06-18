@@ -100,6 +100,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onLogout(){
     console.log('Header: In onLogout() method');
     this.authService.logout();
+    // reset these global events
+    this.projectsService.projectSelected.next(null);
+    this.organisationService.organisationSelected.next(null);
     console.log('Header: Exiting onLogout() method');
   }
 

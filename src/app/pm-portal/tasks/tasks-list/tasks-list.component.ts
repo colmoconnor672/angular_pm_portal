@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Task } from 'src/app/models/task';
 import { TasksService } from 'src/app/services/tasks.service';
 import { ProjectsService } from 'src/app/services/projects.service';
@@ -15,7 +15,7 @@ import { Role } from 'src/app/models/role';
 })
 export class TasksListComponent implements OnInit, OnDestroy {
 
-  tasks: Observable<Task[]>;
+  tasks: Task[];
   loggedInUserId: number;
   loggedInUserRoles: Role[];
   projectId: number;
@@ -40,15 +40,17 @@ export class TasksListComponent implements OnInit, OnDestroy {
     console.log('TLC - In ngOnInit() method - b4 projectsService.projectSelected.subscribe ..');
 
     this.sub1 = this.authService.user.subscribe((user:User) => {
-      this.loggedInUserId = + user.id
-      this.loggedInUserRoles = user.roles
+      if(!!user){
+        this.loggedInUserId = + user.id
+        this.loggedInUserRoles = user.roles
+      }
     });
 
     this.sub2 = this.projectsService.projectSelected.subscribe(
       (selectedProject: number) => {
-        console.log('TLC - In projectsService.projectSelected.subscribe');
-        this.projectId = selectedProject;
-        this.reloadData();
+          console.log('TLC - In projectsService.projectSelected.subscribe - loading date for project ' + selectedProject);
+          this.projectId = selectedProject;
+          this.reloadData();
       }
     );
 
@@ -63,10 +65,13 @@ export class TasksListComponent implements OnInit, OnDestroy {
 
   reloadData() {
     console.log('TLC - In reloadData() method');
+    this.tasks = null;
     if (this.projectId) {
-      this.tasks = this.tasksService.getTaskListForProject(this.projectId);
+      this.tasksService.getTaskListForProject(this.projectId).subscribe(list => {
+        this.tasks = list;
+        console.log('TLC - Leaving reloadData() method');
+      } );
     }
-    console.log('TLC - Leaving reloadData() method');
   }
   
   

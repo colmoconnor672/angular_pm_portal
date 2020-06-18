@@ -7,10 +7,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
 
-  // Allows different error messages to be passed in
+  // 1. Allows different error messages to be passed in
   @Input() message: string;
 
-  // Signals when Alert Close button clicked to signal to client
+  // 2. Signals when Alert Close button clicked to signal to client
   // Components that the Alert message has been confirmed by the 
   // user and can be removed to proceed accordingly.
   @Output() close = new EventEmitter<void>();
@@ -18,7 +18,7 @@ export class AlertComponent implements OnInit {
   constructor() { }
 
   // Called from this components Html when Close btn clicked
-  // Sends signal to Clients to continue accordingly.
+  // Sends signal to Clients to react accordingly.
   onClose(){
     this.close.emit();
   }

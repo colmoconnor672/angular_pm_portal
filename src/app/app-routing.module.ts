@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { LoginComponent } from './login/login.component';
 import { PmPortalComponent } from './pm-portal/pm-portal.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ChatsComponent } from './pm-portal/chats/chats.component';
 import { TasksComponent } from './pm-portal/tasks/tasks.component';
 import { UsersComponent } from './pm-portal/users/users.component';
-import { MentionsComponent } from './pm-portal/mentions/mentions.component';
 import { AnalysisComponent } from './pm-portal/analysis/analysis.component';
-import { TaskDetailsComponent } from './pm-portal/tasks/task-details/task-details.component';
 import { TaskItemDetailComponent } from './pm-portal/tasks/task-details/task-item-detail/task-item-detail.component';
 import { TaskItemEditComponent } from './pm-portal/tasks/task-details/task-item-edit/task-item-edit.component';
 import { TaskSchedulingComponent } from './pm-portal/task-scheduling/task-scheduling.component';
