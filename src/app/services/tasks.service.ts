@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Task } from '../models/task';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TasksService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/task';
+  private baseUrl = environment.targetSpringBootUrl + 'task';
 
   taskSelected = new BehaviorSubject<number>(null);
   tasksUpdated = new Subject<number>();
@@ -33,6 +34,7 @@ export class TasksService {
     let result: Observable<any> = undefined;
     if (projectId) {
       let url = this.baseUrl + 'ForProject'
+      console.log('URL = ' + url);
       result = this.http.get(`${url}/${projectId}`);
     } 
     // else {

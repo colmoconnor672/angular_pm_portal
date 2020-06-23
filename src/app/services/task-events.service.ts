@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TaskEvent } from '../models/taskEvent';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskEventsService {
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/taskEvents';
+  private baseUrl = environment.targetSpringBootUrl + 'taskEvents';
 
   constructor(private http: HttpClient) { }
 

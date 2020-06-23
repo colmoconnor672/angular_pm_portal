@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import { Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
 
-  webSocketEndPoint: string = 'http://localhost:8081/pm_portal/ws';
+  webSocketEndPoint: string = environment.webSocketEndPoint;
   topic: string = "/topic/messageBoard";
   stompClient: any;
   chatUpdated = new Subject<string>();

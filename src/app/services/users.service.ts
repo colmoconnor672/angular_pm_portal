@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/users';
+  private baseUrl = environment.targetSpringBootUrl + 'users';
 
   userItemUpdated = new BehaviorSubject<number>(null);
   userItemChosen = new BehaviorSubject<number>(null);

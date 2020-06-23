@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TaskDependency } from '../models/taskDependency';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TaskDependenciesService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/taskDependencies';
+  private baseUrl = environment.targetSpringBootUrl + 'taskDependencies';
 
   constructor(private http: HttpClient) { }
 

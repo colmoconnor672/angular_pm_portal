@@ -13,8 +13,8 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class TaskItemDetailComponent implements OnInit, OnDestroy {
   private taskid: number;
-  currentTask: Observable<Task>;
-  private assignedToUser: User;
+  currentTask: Task;
+  assignedToUser: User;
   private sub1: Subscription;
   private sub2: Subscription;
 

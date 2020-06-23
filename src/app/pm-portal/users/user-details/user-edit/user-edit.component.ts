@@ -14,9 +14,9 @@ import { Role } from 'src/app/models/role';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-  private allRoles: Role[];
+  allRoles: Role[];
 
-  private isAddMode: boolean = false;
+  isAddMode: boolean = false;
   private orgId: number;
   private userId: number;
   currentUser: User;

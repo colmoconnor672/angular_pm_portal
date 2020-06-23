@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Project } from 'src/app/models/project';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
   private projectid: number;
-  currentProject: Observable<Project>;
+  currentProject: Project;
   private sub1: Subscription;
   private sub2: Subscription;
 

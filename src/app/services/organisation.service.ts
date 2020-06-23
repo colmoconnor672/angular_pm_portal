@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class OrganisationService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/organisations';
+  private baseUrl = environment.targetSpringBootUrl + 'organisations';
 
   public organisationSelected = new BehaviorSubject<number>(null);
 

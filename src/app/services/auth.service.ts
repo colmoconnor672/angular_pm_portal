@@ -5,6 +5,7 @@ import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Role } from '../models/role';
+import { environment } from '../../environments/environment';
 
 export interface AuthResponseData {
   id: string;
@@ -22,7 +23,7 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/';
+  private baseUrl = environment.targetSpringBootUrl;
   private tokenExpirationTimer: any;
   user = new BehaviorSubject<User>(null);
 

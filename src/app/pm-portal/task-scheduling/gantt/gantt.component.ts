@@ -20,8 +20,8 @@ import { TaskPriority } from 'src/app/models/TaskPriority';
 export class GanttComponent implements OnInit, OnDestroy {
   private sub1 = new Subscription();
   private sub2 = new Subscription();
-  private projectId: number = null;
-  private errorMessage;
+  projectId: number = null;
+  errorMessage;
 
   @ViewChild('gantt_here', {static: true}) ganttContainer: ElementRef;
 

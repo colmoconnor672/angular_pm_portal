@@ -6,11 +6,11 @@
       <ul class="navbar-nav">
 
       <li class="nav-item">
-        <a routerLink="/org/projects" class="nav-link" routerLinkActive="active">Projects</a>
+        <a routerLink="/org/projects/default" class="nav-link" routerLinkActive="active">Projects</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/org/tasks" class="nav-link" routerLinkActive="active">Tasks</a>
+        <a routerLink="/org/tasks/default" class="nav-link" routerLinkActive="active">Tasks</a>
       </li>
 
       <li class="nav-item">
@@ -38,7 +38,7 @@
     <ul class="navbar-nav" style="width: 100%;">
       <li class="centered-full-width" *ngIf="isAuthenticated">
 
-        <form class="pmp-compact" [formGroup]="headerForm" (ngSubmit)="onSubmit()">
+        <form class="pmp-compact" [formGroup]="headerForm">
           <select id="selectedProject" name="selectedProject" [formControlName]="['selectedProject']" #projectCB class="form-control form-control-sm" (change)="onProjectSelected($event)" placeholder="No Project Selected!">
             <option [ngValue]="null" [disabled]="true">No Project Selected!</option>
             <option *ngFor="let project of projects" [ngValue]="project.id" value="{{project.id}}" [selected]="isProjectSelected(project.id)" >  <!--   -->

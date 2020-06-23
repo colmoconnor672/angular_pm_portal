@@ -1,5 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 //import { multi } from './stacked-vertical-bar-chart-data';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';

@@ -80,7 +80,7 @@
       <div class="form-group">
         <label class="small font-weight-bold" for="description">Progress</label>
         <mat-slider #progressSlider class="form-control form-control-sm" [formControlName]="['progress']" aria-placeholder="Progress"
-          min="0" max="1" step="0.05" thumbLabel="true" [displayWith]="formatProgressLabel(someProperty)" 
+          min="0" max="1" step="0.05" thumbLabel="true" [displayWith]="formatProgressLabel(true)" 
           (change)="onProgressSliderChanged(progressSlider.value)">
         </mat-slider>
         <span *ngIf="!taskForm.get('progress').valid && taskForm.get('progress').touched"

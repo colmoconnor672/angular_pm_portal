@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TaskStatus } from '../models/TaskStatus';
-import { TaskPriority } from '../models/TaskPriority';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SupportDataService {
 
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/supportData';
-  private rolesUrl = 'http://localhost:8081/pm_portal/api/v1/roles';
+  private baseUrl = environment.targetSpringBootUrl + 'supportData';
+  private rolesUrl = environment.targetSpringBootUrl + 'roles';
   
   constructor(private http: HttpClient) { }
 

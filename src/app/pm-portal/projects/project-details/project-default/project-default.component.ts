@@ -14,7 +14,7 @@ export class ProjectDefaultComponent implements OnInit {
   }
 
   onAddProject(){
-    this.router.navigate(['add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
+    this.router.navigate(['../add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
   }
 
 }

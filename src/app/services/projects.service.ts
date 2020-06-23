@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ProjectsService {
-  private baseUrl = 'http://localhost:8081/pm_portal/api/v1/projects';
+  private baseUrl = environment.targetSpringBootUrl + 'projects';
 
   // this is used to signal when an overall project is selected for the UI
   // this is used by the Header and the subscribing TasksList components

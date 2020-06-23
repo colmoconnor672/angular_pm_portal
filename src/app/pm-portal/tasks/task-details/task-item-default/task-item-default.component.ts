@@ -14,7 +14,7 @@ export class TaskItemDefaultComponent implements OnInit {
   }
 
   onAddTask(){
-    this.router.navigate(['add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
+    this.router.navigate(['../add'], {queryParams: {addMode: 'true'}, relativeTo: this.route} );
   }
 
 }

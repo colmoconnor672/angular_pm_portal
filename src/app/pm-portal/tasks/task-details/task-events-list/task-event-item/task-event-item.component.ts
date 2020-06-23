@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./task-event-item.component.css']
 })
 export class TaskEventItemComponent implements OnInit {
-  private isAuthor = false;
+  isAuthor = false;
   @Input() eventItem: TaskEvent;
 
   constructor(private taskEventsService: TaskEventsService, private authService: AuthService) { }
